@@ -1,0 +1,13 @@
+.button {
+  background: linear-gradient(to top, #01355A, #036AB4);
+  background: -webkit-linear-gradient(to top, #01355A, #036AB4);
+  border: none;
+  font-size: 13px;
+  color: #ffffff;
+  height: 37px;
+  width: 100%;
+}
+
+.button i {
+  font-size: 16px;
+}

@@ -1,0 +1,128 @@
+.main-container .header-container {
+  background-color: #ffffff;
+  border: none;
+  box-shadow: 0 0 3px #cbcbcb;
+  margin-bottom: 5px;
+}
+
+.main-container .header-container .up-line {
+  height: 50px;
+  background-color: #095791;
+}
+
+.main-container .header-container .up-line .login-profil-box {
+  min-width: 1%;
+  float: right;
+  padding: 6px;
+  text-align: right;
+  margin-right: 20px;
+}
+
+.main-container .header-container .up-line .login-profil-box i {
+  color: #2390e5;
+  font-size: 25px;
+}
+
+.main-container .header-container .up-line .login-profil-box .profil-name {
+  font-size: 13px;
+  font-weight: 500;
+  color: #ffffff;
+  margin-right: 7px;
+  margin-top: 3px;
+}
+
+.main-container .header-container .up-line .login-profil-box #profil-option {
+  border: none;
+  box-shadow: none;
+}
+
+.main-container .header-container .up-line .login-profil-box #profil-option:focus {
+  box-shadow: none;
+  border: none;
+}
+
+.main-container .header-container .down-line {
+  background-color: #ffffff;
+  height: 50px;
+}
+
+.main-container .header-container .down-line .logo-icon {
+  border-radius: 25px;
+  height: 70px;
+  margin-top: -25px;
+  margin-left: 20px;
+}
+
+.main-container .body-container {
+  background-color: #ffffff;
+  height: 200px;
+  width: 99%;
+  box-shadow: 0 0 3px #cbcbcb;
+}
+
+.main-container .body-container .main-left-menu {
+  width: 25%;
+}
+
+.main-container .body-container .report-main {
+  width: 75%;
+}
+
+.main-container .body-container .report-main .item-o {
+  border: 1px solid #e1e1e1;
+  border-radius: 3px;
+  width: 33%;
+  height: 150px;
+  margin: 3px;
+  background: linear-gradient(to top, #e7e7e7, #f1efef);
+  box-shadow: 0 0 1px #cbcbcb;
+  cursor: pointer;
+}
+
+.main-container .report-main .item-o .item-inside-border {
+}
+
+.main-container .report-main .item-o .item-title {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 10px;
+  text-shadow: 0 0 3px #e1e1e1;
+}
+
+.main-container .report-main .item-o ul {
+  list-style: none;
+}
+
+.report-main .toolbar {
+  height: 35px;
+  margin-bottom: 5px;
+}
+
+.report-main .toolbar .title {
+  font-weight: 500;
+  font-size: 19px;
+  padding: 7px;
+}
+
+.item-signal {
+  height: 12px;
+  width: 12px;
+  border-radius: 12px;
+  margin-top: 3px;
+  margin-right: 3px;
+}
+
+.board-report ul .title {
+  font-size: 13px;
+  font-weight: 100;
+}
+
+.item-o .item-o-footer .item-check {
+  float: right;
+  padding: 3px;
+}
+.item-o .item-o-footer .item-check i{
+  font-size: 18px;
+  color: #797979;
+}
+

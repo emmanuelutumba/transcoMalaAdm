@@ -1,12 +1,15 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {ReportContainerComponent} from './components/report-container/report-container.component';
+import {RouterModule} from '@angular/router';
+import {ReportRoutes} from './report.routes';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [ReportContainerComponent],
   imports: [
-    CommonModule
+    CommonModule, RouterModule.forChild(ReportRoutes)
   ]
 })
-export class ReportModule { }
+export class ReportModule {
+}

@@ -1,0 +1,10 @@
+.item-o {
+  border: 1px solid #e1e1e1;
+  border-radius: 3px;
+  width: 98.5%;
+  height: 150px;
+  margin: 3px;
+  background: linear-gradient(to top, #e7e7e7, #f1efef);
+  box-shadow: 0 0 1px #cbcbcb;
+  cursor: pointer;
+}

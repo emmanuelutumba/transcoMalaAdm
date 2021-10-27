@@ -1,0 +1,35 @@
+.login-container {
+  padding-top: 15vh;
+}
+
+.login-container form {
+  background-color: #ffffff;
+  box-shadow: 0 0 5px #cbcbcb;
+  height: 500px;
+  margin: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 60px;
+}
+
+.login-container form .logo {
+  height: 100px;
+  display: block;
+  margin: auto;
+}
+
+.login-container form .form-group {
+  margin-top: 10px;
+}
+
+.login-container form .login-btn-box {
+}
+
+.login-container form .error-msg {
+  color: #ff0000;
+  text-align: center;
+  font-size: 13px;
+  min-height: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

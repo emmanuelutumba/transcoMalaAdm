@@ -1,1 +1,19 @@
-<p>login-container works!</p>
+<div class="login-container col-6 m-auto">
+  <form class="col-lg-6 col-md-8 col-sm-10" [formGroup]="formGroup">
+    <img src="assets/imgs/cocar.png" class="logo" alt="cocar">
+    <div class="form-group">
+      <app-input-text [id]="'username'" [formGroup]="formGroup" [placeholder]="'Nom d\'utilisateur'"></app-input-text>
+    </div>
+    <div class="form-group">
+      <app-input-text [id]="'password'" [formGroup]="formGroup" [type]="'password'"
+                      [placeholder]="'Mot de passe'"></app-input-text>
+    </div>
+    <div class="error-msg">
+      {{errorMsg}}
+    </div>
+    <div class="login-btn-box">
+      <app-button (clickEvent)="onLogin($event)" [id]="'login-btn'"
+                  [text]="'Se connecter'" [width]="'80%'"></app-button>
+    </div>
+  </form>
+</div>

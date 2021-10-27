@@ -1,0 +1,22 @@
+<div class="item-o" [id]="id">
+  <h3 class="item-title">{{title}}</h3>
+  <ul>
+    <li class="d-flex paid-report">
+      <div class="item-signal"></div>
+      <h6 class="title">Payées : {{paidValue}}</h6>
+    </li>
+    <li class="d-flex average-paid-report">
+      <div class="item-signal"></div>
+      <h6 class="title">A moitié payées : {{averagePaidValue}}</h6>
+    </li>
+    <li class="d-flex never-paid-report">
+      <div class="item-signal"></div>
+      <h6 class="title">Non payées : {{neverPaidValue}}</h6>
+    </li>
+  </ul>
+  <div class="item-o-footer">
+    <div class="item-check">
+      <i class="fa fa-circle-o"></i>
+    </div>
+  </div>
+</div>
