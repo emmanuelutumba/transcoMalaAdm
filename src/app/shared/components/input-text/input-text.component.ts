@@ -13,6 +13,7 @@ export class InputTextComponent implements OnInit {
   @Input() type = 'text';
   @Input() placeholder = '';
   @Input() value = '';
+  @Input() inForm = true;
 
   constructor() {
   }

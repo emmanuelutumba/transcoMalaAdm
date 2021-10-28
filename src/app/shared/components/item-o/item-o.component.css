@@ -8,3 +8,55 @@
   box-shadow: 0 0 1px #cbcbcb;
   cursor: pointer;
 }
+
+.item-o .item-signal {
+  height: 12px;
+  width: 12px;
+  border-radius: 12px;
+  margin-top: 3px;
+  margin-right: 5px;
+}
+
+.item-o .paid-report .item-signal {
+  background-color: #008000;
+}
+
+.item-o .average-paid-report .item-signal {
+  background-color: #ff9e2e;
+}
+
+.item-o .never-paid-report .item-signal {
+  background-color: #ff0000;
+}
+
+.item-o .item-o-title {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 13px;
+}
+
+.item-o ul{
+  padding-left: 20px;
+}
+
+.item-o ul .title{
+  font-weight: 200;
+  font-size: 14px;
+}
+
+.item-o .item-o-footer{
+  width: 100%;
+}
+
+.item-o .item-o-footer .item-check{
+  float: right;
+  min-width: 10px;
+  margin-top: -8px;
+}
+
+.item-o .item-o-footer .item-check i{
+  padding: 4px;
+  color: #969696;
+  font-size: 18px;
+}

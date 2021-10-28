@@ -1,7 +1,11 @@
-<div [formGroup]="formGroup">
+<div [formGroup]="formGroup" *ngIf="inForm">
   <input [id]="id" class="form-control input-text"
          [formControlName]="id" [value]="value"
          [placeholder]="placeholder"
-         [type]="type" autocomplete="off" />
+         [type]="type" autocomplete="off"/>
 
 </div>
+<input [id]="id" class="form-control input-text" [value]="value"
+       *ngIf="!inForm"
+       [placeholder]="placeholder"
+       [type]="type" autocomplete="off"/>

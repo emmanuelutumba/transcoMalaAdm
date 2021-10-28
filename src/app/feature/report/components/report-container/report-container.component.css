@@ -1,0 +1,12 @@
+.report-main {
+}
+
+.report-main .toolbar {
+  height: 35px;
+  margin-bottom: 5px;
+}
+.report-main .toolbar .title {
+  font-weight: 500;
+  font-size: 19px;
+  padding: 7px;
+}

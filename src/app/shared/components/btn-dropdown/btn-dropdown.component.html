@@ -1,0 +1,9 @@
+<div class="btn-dropdown dropdown" ngbDropdown>
+  <button [id]="id" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown"
+          [ngStyle]="{'height':height}"
+          aria-expanded="false">{{title}}</button>
+  <div class="dropdown-menu">
+    <div #opt (click)="onSelectItem(opt)" class="dropdown-item" *ngFor="let data of datas"
+         [id]="data.id">{{data.value}}</div>
+  </div>
+</div>

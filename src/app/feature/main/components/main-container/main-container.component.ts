@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from '../../../../core/services/auth.service';
 import $ from 'jquery';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-main-container',
@@ -11,8 +12,12 @@ export class MainContainerComponent implements OnInit {
 
   userData: any;
 
-  constructor(private authService: AuthService) {
+  constructor(private authService: AuthService, private router: Router) {
     this.userData = this.authService.getUserData();
+    if (this.userData == null) {
+      this.userData = {username: ''};
+    }
+    this.router.navigate(['main/report/insurance']);
   }
 
   ngOnInit(): void {
@@ -20,10 +25,6 @@ export class MainContainerComponent implements OnInit {
   }
 
   init() {
-    const parent = $('.main-container');
-    parent.find('.paid-report .item-signal').css('backgroundColor', ' #008000');
-    parent.find('.average-paid-report .item-signal').css('backgroundColor', ' #ff9e2e');
-    parent.find('.never-paid-report .item-signal').css('backgroundColor', ' #ff0000');
   }
 
 }

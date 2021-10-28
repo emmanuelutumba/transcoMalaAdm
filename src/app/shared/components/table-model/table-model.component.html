@@ -1,0 +1,29 @@
+<table class="table-model table table-hover">
+  <thead>
+  <tr>
+    <th>
+      <div class="title">
+      </div>
+    </th>
+    <th *ngFor="let title of headers">
+      <div class="title">
+        {{title}}
+      </div>
+    </th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr #tr [id]="data.id" *ngFor="let data of datas" (click)="onSelectedItem(tr)">
+    <td *ngIf="showCheck">
+      <div class="check-item">
+
+      </div>
+    </td>
+    <td [id]="item.key+data.id" *ngFor="let item of data | keyvalue">
+      <div *ngIf="isShowCol(item.key+data.id,item)">
+        {{item.value}}
+      </div>
+    </td>
+  </tr>
+  </tbody>
+</table>
