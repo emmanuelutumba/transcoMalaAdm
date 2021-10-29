@@ -1,0 +1,63 @@
+.vehicule-form {
+  padding-top: 15px;
+  padding-bottom: 30px;
+}
+
+.vehicule-form form {
+  overflow: auto;
+  height: 80vh;
+}
+
+.vehicule-form .btn-close {
+  font-weight: bold;
+  font-size: 10px;
+  cursor: pointer;
+  color: #414040;
+}
+
+.vehicule-form form {
+  width: 80%;
+  margin: auto;
+}
+
+.vehicule-form form .field-box {
+  padding: 2px;
+}
+
+.vehicule-form form .title {
+  color: #414040;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.vehicule-form form .line-up {
+  margin-top: 30px;
+}
+
+.vehicule-form form .field-box {
+  margin-top: 12px;
+  width: 90%;
+}
+
+.vehicule-form form .btn-add-vehicle {
+  float: right;
+  min-width: 10px;
+}
+
+.vehicule-form .vehicule-form-title {
+  width: 90%;
+  margin: auto;
+  font-size: 22px;
+  font-weight: bold;
+  border-bottom: 1px solid #e7e7e7;
+  padding: 7px;
+}
+
+.vehicule-form .footer-line-up {
+  margin-top: 12px;
+}
+
+.vehicule-form .footer-line-up .btn-save-box {
+  min-width: 10px;
+  float: right;
+}

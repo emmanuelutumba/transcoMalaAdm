@@ -1,11 +1,16 @@
-<div [formGroup]="formGroup" *ngIf="inForm">
+<div [formGroup]="formGroup" *ngIf="!multiligne">
   <input [id]="id" class="form-control input-text"
          [formControlName]="id" [value]="value"
          [placeholder]="placeholder"
+         [name]="id"
          [type]="type" autocomplete="off"/>
 
 </div>
-<input [id]="id" class="form-control input-text" [value]="value"
-       *ngIf="!inForm"
-       [placeholder]="placeholder"
-       [type]="type" autocomplete="off"/>
+<div [formGroup]="formGroup" *ngIf="multiligne">
+  <textarea [id]="id" class="form-control input-text"
+            [formControlName]="id" [value]="value"
+            [placeholder]="placeholder"
+            [name]="id"
+            autocomplete="off"></textarea>
+
+</div>

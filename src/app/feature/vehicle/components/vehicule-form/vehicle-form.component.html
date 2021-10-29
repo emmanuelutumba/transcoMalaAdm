@@ -1,0 +1,88 @@
+<div class="vehicule-form">
+  <h2 class="vehicule-form-title">Véhicule</h2>
+  <form [formGroup]="formGroup">
+    <div class="line-up">
+      <h3 class="title">Détail</h3>
+      <div class="d-flex">
+        <div class="field-box">
+          <app-input-text [id]="'marque'" [formGroup]="formGroup" [placeholder]="'Marque'"
+                          [type]="'text'"></app-input-text>
+        </div>
+        <div class="field-box">
+          <app-input-text [id]="'modele'" [formGroup]="formGroup" [placeholder]="'Modèle'"
+                          [type]="'text'"></app-input-text>
+        </div>
+      </div>
+      <div class="d-flex">
+        <div class="field-box">
+          <app-input-text [id]="'idNumber'" [formGroup]="formGroup" [placeholder]="'Numéro de plaque'"
+                          [type]="'text'"></app-input-text>
+        </div>
+        <div class="field-box">
+          <app-input-text [id]="'insurance'" [formGroup]="formGroup" [placeholder]="'Assurance'"
+                          [type]="'text'"></app-input-text>
+        </div>
+      </div>
+      <div class="d-flex">
+        <div class="field-box">
+          <app-input-text [id]="'voletJaune'" [formGroup]="formGroup" [placeholder]="'Volet jaune'"
+                          [type]="'text'"></app-input-text>
+        </div>
+        <div class="field-box">
+          <app-input-text [id]="'carteRose'" [formGroup]="formGroup" [placeholder]="'Carte rose'"
+                          [type]="'text'"></app-input-text>
+        </div>
+      </div>
+    </div>
+    <div class="line-up">
+      <h3 class="title">Propriétaire</h3>
+      <div class="d-flex">
+        <div class="field-box">
+          <app-input-text [id]="'lastname'" [formGroup]="formGroup" [placeholder]="'Nom'"
+                          [type]="'text'"></app-input-text>
+        </div>
+        <div class="field-box">
+          <app-input-text [id]="'name'" [formGroup]="formGroup" [placeholder]="'Prénom'"
+                          [type]="'text'"></app-input-text>
+        </div>
+      </div>
+      <div class="d-flex">
+        <div class="field-box">
+          <app-input-text [id]="'phoneNumber'" [formGroup]="formGroup" [placeholder]="'Téléphone'"
+                          [type]="'text'"></app-input-text>
+        </div>
+        <div class="field-box">
+          <app-input-text [id]="'identityId'" [formGroup]="formGroup" [placeholder]="'ID Pièce d\'identité'"
+                          [type]="'text'"></app-input-text>
+        </div>
+      </div>
+      <div class="d-flex col-6">
+        <div class="field-box">
+          <app-input-text [id]="'address'" [formGroup]="formGroup" [placeholder]="'Adresse'"
+                          [type]="'text'" [multiligne]="true"></app-input-text>
+        </div>
+      </div>
+    </div>
+    <div class="line-up">
+      <div class="toolbar d-flex">
+        <h3 class="title col-2">Conducteur</h3>
+        <div class="col-10">
+          <div class="btn-add-vehicle">
+            <app-button [withIcon]="true" [icon]="'fa fa-pencil'" [id]="'add-driver'"
+                        (clickEvent)="onOpenFormDriver()"></app-button>
+          </div>
+        </div>
+      </div>
+      <app-table-model [headers]="['Prénom','Nom','Téléphone','Pièce d\'identité. ID','Adresse']"
+                       [datas]="drivers"></app-table-model>
+    </div>
+    <div class="footer-line-up">
+      <div class="btn-save-box">
+        <app-button [id]="'btn-create-vehcle'" [text]="'Enregistrer'"
+                    (clickEvent)="onCreateVehicle($event)"></app-button>
+      </div>
+    </div>
+  </form>
+  <app-driver-form (eventSave)="onAddDriver($event)" [display]="display"
+                   (eventClose)="onCloseFormDriver()"></app-driver-form>
+</div>

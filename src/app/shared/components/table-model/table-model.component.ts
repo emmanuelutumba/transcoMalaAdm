@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import $ from 'jquery';
+import {KeyValue} from '@angular/common';
 
 @Component({
   selector: 'app-table-model',
@@ -12,6 +13,11 @@ export class TableModelComponent implements OnInit {
   @Input() datas = [];
   @Input() showCheck = true;
   @Input() showId = false;
+  indexOrderAsc = (akv: KeyValue<string, any>, bkv: KeyValue<string, any>): number => {
+    const a = akv.value.index;
+    const b = bkv.value.index;
+    return a > b ? 1 : (b > a ? -1 : 0);
+  }
 
   constructor() {
   }
@@ -32,5 +38,6 @@ export class TableModelComponent implements OnInit {
     parent.find('.check-item').attr('class', 'check-item');
     $(tr).find('.check-item').attr('class', 'check-item table-model-active');
   }
+
 
 }

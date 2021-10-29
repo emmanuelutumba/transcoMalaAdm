@@ -19,7 +19,7 @@
 
       </div>
     </td>
-    <td [id]="item.key+data.id" *ngFor="let item of data | keyvalue">
+    <td [id]="item.key+data.id" *ngFor="let item of data | keyvalue:indexOrderAsc">
       <div *ngIf="isShowCol(item.key+data.id,item)">
         {{item.value}}
       </div>

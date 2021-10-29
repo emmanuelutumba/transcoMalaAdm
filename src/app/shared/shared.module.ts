@@ -7,11 +7,12 @@ import { ItemOComponent } from './components/item-o/item-o.component';
 import { BtnDropdownComponent } from './components/btn-dropdown/btn-dropdown.component';
 import { TableModelComponent } from './components/table-model/table-model.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { SelectOptionComponent } from './components/select-option/select-option.component';
 
 
 
 @NgModule({
-    declarations: [InputTextComponent, ButtonComponent, ItemOComponent,  BtnDropdownComponent, TableModelComponent, SearchBarComponent],
+    declarations: [InputTextComponent, ButtonComponent, ItemOComponent,  BtnDropdownComponent, TableModelComponent, SearchBarComponent, SelectOptionComponent],
     exports: [
         InputTextComponent,
         ButtonComponent,

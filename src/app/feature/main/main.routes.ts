@@ -8,6 +8,7 @@ import {UserContainerComponent} from '../auth/component/user-container/user-cont
 import {ReportInsuranceComponent} from '../report/components/report-insurance/report-insurance.component';
 import {ReportContraventionComponent} from '../report/components/report-contravention/report-contravention.component';
 import {ReportTaxeComponent} from '../report/components/report-taxe/report-taxe.component';
+import {VehicleFormComponent} from '../vehicle/components/vehicule-form/vehicle-form.component';
 
 export const MainRoutes: Routes = [
   {
@@ -36,6 +37,9 @@ export const MainRoutes: Routes = [
       }, {
         path: 'vehicle',
         component: VehicleContainerComponent
+      }, {
+        path: 'vehicle/add',
+        component: VehicleFormComponent
       }, {
         path: 'configuration',
         component: ConfigContainerComponent

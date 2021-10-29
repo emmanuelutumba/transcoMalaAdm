@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-vehicle-container',
@@ -29,7 +30,7 @@ export class VehicleContainerComponent implements OnInit {
 
   displayForm = 'none';
 
-  constructor() {
+  constructor(private router: Router) {
   }
 
   ngOnInit(): void {
@@ -61,7 +62,7 @@ export class VehicleContainerComponent implements OnInit {
   onOptionSelected(id) {
     console.log(id === '1');
     if (id === '1') {
-      this.displayForm = 'block';
+      this.router.navigate(['main/vehicle/add']);
     }
   }
 
