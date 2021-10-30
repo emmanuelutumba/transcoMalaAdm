@@ -26,6 +26,13 @@
 
 .driver-form .field-box {
   padding: 3px;
+  margin-top: 12px;
+}
+
+.driver-form .field-box .title {
+  font-size: 13px;
+  font-weight: 300;
+  color: #414040;
 }
 
 .driver-form .modal-footer .msg-box {

@@ -9,6 +9,7 @@ import {ReportInsuranceComponent} from '../report/components/report-insurance/re
 import {ReportContraventionComponent} from '../report/components/report-contravention/report-contravention.component';
 import {ReportTaxeComponent} from '../report/components/report-taxe/report-taxe.component';
 import {VehicleFormComponent} from '../vehicle/components/vehicule-form/vehicle-form.component';
+import {ContribuableFormComponent} from '../contribuable/components/contribuable-form/contribuable-form.component';
 
 export const MainRoutes: Routes = [
   {
@@ -46,6 +47,9 @@ export const MainRoutes: Routes = [
       }, {
         path: 'user',
         component: UserContainerComponent
+      }, {
+        path: 'contribuable',
+        component: ContribuableFormComponent
       }
     ]
   }

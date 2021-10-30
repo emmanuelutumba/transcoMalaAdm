@@ -21,6 +21,9 @@ const routes: Routes = [
     }, {
       path: '',
       loadChildren: () => import('./feature/vehicle/vehicle.module').then(m => m.VehicleModule)
+    }, {
+      path: '',
+      loadChildren: () => import('./feature/contribuable/contribuable.module').then(m => m.ContribuableModule)
     }
   ]
 ;

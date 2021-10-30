@@ -1,1 +1,7 @@
-<p>select-option works!</p>
+<div [formGroup]="formGroup">
+  <select [id]="id" [formGroup]="formGroup" class="form-control" [formControlName]="id">
+    <option *ngFor="let option of options;" [value]="option.key">
+      {{option.value}}
+    </option>
+  </select>
+</div>

@@ -1,0 +1,40 @@
+.contribuable-container {
+  line-height: 1.5 !important;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.container-title {
+  color: #414040;
+  font-size: 20px;
+  border-bottom: 1px solid #cbcbcb;
+  padding: 7px;
+}
+
+.contribuable-container form {
+  padding-top: 15px;
+}
+
+.contribuable-container form .line-up {
+  margin-top: 15px;
+}
+
+.contribuable-container form .field-box {
+  margin: 7px;
+  width: 50%;
+}
+
+.contribuable-container form .field-box .label{
+  color: #4d4d4d;
+  font-size: 13px;
+}
+
+.contribuable-container form .line-up .toolbar .title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.contribuable-container form .btn-add-vehicle {
+  min-width: 10px;
+  float: right;
+}

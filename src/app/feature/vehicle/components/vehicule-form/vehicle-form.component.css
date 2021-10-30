@@ -57,7 +57,23 @@
   margin-top: 12px;
 }
 
-.vehicule-form .footer-line-up .btn-save-box {
+.vehicule-form .footer-line-up .btn-save-box .btn-box {
   min-width: 10px;
   float: right;
+}
+
+.vehicule-form .error-msg {
+  color: red;
+  font-size: 13px;
+  text-align: right;
+}
+
+.vehicule-form .field-box {
+  margin-top: 12px;
+}
+
+.vehicule-form .field-box .title {
+  font-size: 13px;
+  font-weight: 300;
+  color: #414040;
 }

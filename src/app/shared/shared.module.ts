@@ -19,7 +19,8 @@ import { SelectOptionComponent } from './components/select-option/select-option.
         ItemOComponent,
         BtnDropdownComponent,
         TableModelComponent,
-        SearchBarComponent
+        SearchBarComponent,
+        SelectOptionComponent
     ],
     imports: [
         CommonModule,

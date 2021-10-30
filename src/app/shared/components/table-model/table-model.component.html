@@ -1,13 +1,17 @@
 <table class="table-model table table-hover">
   <thead>
   <tr>
-    <th>
+    <th *ngIf="showCheck">
       <div class="title">
       </div>
     </th>
     <th *ngFor="let title of headers">
       <div class="title">
         {{title}}
+      </div>
+    </th>
+    <th *ngIf="withRm">
+      <div class="title">
       </div>
     </th>
   </tr>
@@ -19,10 +23,15 @@
 
       </div>
     </td>
-    <td [id]="item.key+data.id" *ngFor="let item of data | keyvalue:indexOrderAsc">
+    <td [id]="item.key+data.id" *ngFor="let item of data | keyvalue:asIsOrder">
       <div *ngIf="isShowCol(item.key+data.id,item)">
         {{item.value}}
       </div>
+    </td>
+    <td *ngIf="withRm">
+      <i class="fa fa-close rm-item" (click)="onRemoveItem(data.id)">
+
+      </i>
     </td>
   </tr>
   </tbody>

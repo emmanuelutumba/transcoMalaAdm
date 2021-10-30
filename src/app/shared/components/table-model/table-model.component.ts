@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import $ from 'jquery';
 import {KeyValue} from '@angular/common';
 
@@ -13,11 +13,8 @@ export class TableModelComponent implements OnInit {
   @Input() datas = [];
   @Input() showCheck = true;
   @Input() showId = false;
-  indexOrderAsc = (akv: KeyValue<string, any>, bkv: KeyValue<string, any>): number => {
-    const a = akv.value.index;
-    const b = bkv.value.index;
-    return a > b ? 1 : (b > a ? -1 : 0);
-  }
+  @Input() withRm = false;
+  @Output() eventRemoveItem: EventEmitter<any> = new EventEmitter<any>();
 
   constructor() {
   }
@@ -39,5 +36,12 @@ export class TableModelComponent implements OnInit {
     $(tr).find('.check-item').attr('class', 'check-item table-model-active');
   }
 
+  onRemoveItem(id) {
+    console.log('id', id);
+    this.eventRemoveItem.emit(id);
+  }
 
+  asIsOrder(a, b) {
+    return 1;
+  }
 }

@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
+import {VehicleService} from '../../../../core/services/vehicle.service';
 
 @Component({
   selector: 'app-vehicle-container',
@@ -9,7 +10,7 @@ import {Router} from '@angular/router';
 export class VehicleContainerComponent implements OnInit {
 
   headers = [
-    'Marque', 'Modèle', 'Numéro de plaque'
+    'Marque', 'Modèle', 'Numéro de plaque', 'ID. carte rose', 'ID. volet jaune'
   ];
   vehicules = [];
 
@@ -30,33 +31,17 @@ export class VehicleContainerComponent implements OnInit {
 
   displayForm = 'none';
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private vehicleService: VehicleService) {
   }
 
   ngOnInit(): void {
-    this.vehicules = [
-      {
-        id: 1, marque: 'TOYOTA', modele: 'IST', numeroPlaque: 'KN5665'
-      }, {
-        id: 2, marque: 'TOYOTA', modele: 'IST', numeroPlaque: 'KN56675'
-      }, {
-        id: 3, marque: 'TOYOTA', modele: 'IST', numeroPlaque: 'KN565'
-      }, {
-        id: 4, marque: 'TOYOTA', modele: 'IST', numeroPlaque: 'KN5665'
-      }, {
-        id: 5, marque: 'TOYOTA', modele: 'IST', numeroPlaque: 'KN564365'
-      }, {
-        id: 6, marque: 'TOYOTA', modele: 'IST', numeroPlaque: 'KN095665'
-      }, {
-        id: 7, marque: 'TOYOTA', modele: 'IST', numeroPlaque: 'KN195665'
-      }, {
-        id: 8, numeroPlaque: 'KN13425665', marque: 'TOYOTA', modele: 'IST'
-      }, {
-        id: 9, marque: 'TOYOTA', modele: 'IST', numeroPlaque: 'KN56562165'
-      }, {
-        id: 10, marque: 'TOYOTA', modele: 'IST', numeroPlaque: 'KN56603285'
+    this.vehicleService.getList().subscribe(httpResponse => {
+      console.log(httpResponse.data);
+      if (httpResponse.code === '200') {
+        this.vehicules = httpResponse.data;
+        console.log('data vehicles', this.vehicules[0][0]);
       }
-    ];
+    });
   }
 
   onOptionSelected(id) {

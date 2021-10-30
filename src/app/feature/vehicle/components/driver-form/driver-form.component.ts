@@ -14,6 +14,10 @@ export class DriverFormComponent implements OnInit {
 
   @Output() eventClose: EventEmitter<any> = new EventEmitter<any>();
   @Output() eventSave: EventEmitter<any> = new EventEmitter<any>();
+  options = [{key: 'default', value: '- Pièce  d\'identité -'}, {key: 'Passport', value: 'Passport'}, {
+    key: 'Carte d\'electeur',
+    value: 'Carte d\'electeur'
+  }];
 
   errorMsg = '';
 
@@ -27,7 +31,9 @@ export class DriverFormComponent implements OnInit {
       phoneNumber: ['', Validators.required],
       address: ['', Validators.required],
       identityId: ['', Validators.required],
-      typeCarte: ['', Validators.required]
+      typeCarte: ['', Validators.required],
+      licenceNumber: ['', Validators.required],
+      expireDateLicenceNumber: ['', Validators.required]
     });
   }
 
@@ -44,6 +50,7 @@ export class DriverFormComponent implements OnInit {
   }
 
   onClose() {
+    this.formGroup.reset();
     this.eventClose.emit();
   }
 
