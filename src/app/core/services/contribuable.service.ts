@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {environment} from '../../../environments/environment';
 import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs';
+import {Observable, Subject} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {HttpResponseModel} from '../../shared/model/HttpResponse.model';
 
@@ -10,12 +10,21 @@ import {HttpResponseModel} from '../../shared/model/HttpResponse.model';
 })
 export class ContribuableService {
   private url = environment.baseUrl + 'proprietaire';
+  subject: Subject<any> = new Subject<any>();
 
   constructor(private http: HttpClient) {
   }
 
+  public load() {
+    this.http.get(this.url).pipe(map(data => {
+      console.log(data);
+      this.subject.next(data);
+      return data;
+    })).subscribe();
+  }
+
   public getAll(): Observable<any> {
-    return this.http.get(this.url);
+    return this.subject.asObservable();
   }
 
   public getById(id: number): Observable<any> {
@@ -33,5 +42,13 @@ export class ContribuableService {
 
   save(owner): Observable<any> {
     return this.http.post(this.url, owner);
+  }
+
+  update(owner): Observable<any> {
+    return this.http.put(this.url, owner);
+  }
+
+  delete(id: number): Observable<any> {
+    return this.http.delete(this.url + '/' + id);
   }
 }

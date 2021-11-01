@@ -1,0 +1,51 @@
+.contribuable-edit-form {
+  line-height: 1.5 !important;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.container-title {
+  color: #414040;
+  font-size: 20px;
+  border-bottom: 1px solid #cbcbcb;
+  padding: 7px;
+}
+
+.contribuable-edit-form form {
+  padding-top: 15px;
+}
+
+.contribuable-edit-form form .line-up {
+  margin-top: 15px;
+}
+
+.contribuable-edit-form form .field-box {
+  margin: 7px;
+  width: 50%;
+}
+
+.contribuable-edit-form form .field-box .label {
+  color: #4d4d4d;
+  font-size: 13px;
+}
+
+.contribuable-edit-form form .line-up .toolbar .title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.contribuable-edit-form form .btn-add-vehicle {
+  min-width: 10px;
+  float: right;
+  margin-right: 7px;
+}
+
+.contribuable-edit-form .contribuable-edit-form-footer .error-msg {
+  font-size: 13px;
+  color: red;
+}
+
+.contribuable-edit-form .contribuable-edit-form-footer .save-btn-box {
+  min-width: 20px;
+  float: right;
+}

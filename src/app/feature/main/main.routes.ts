@@ -15,6 +15,7 @@ import {ContribuableDetailComponent} from '../contribuable/components/contribuab
 import {DriverComponent} from '../contribuable/components/driver/driver.component';
 import {TaxeComponent} from '../contribuable/components/taxe/taxe.component';
 import {ContraventionComponent} from '../contribuable/components/contravention/contravention.component';
+import {ContribuableEditFormComponent} from '../contribuable/components/contribuable-edit-form/contribuable-edit-form.component';
 
 export const MainRoutes: Routes = [
   {
@@ -79,6 +80,9 @@ export const MainRoutes: Routes = [
             component: ContraventionComponent
           }
         ]
+      }, {
+        path: 'contribuable/edit/:id',
+        component: ContribuableEditFormComponent
       }
     ]
   }

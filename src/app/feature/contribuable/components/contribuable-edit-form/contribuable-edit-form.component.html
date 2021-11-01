@@ -1,0 +1,60 @@
+<div class="contribuable-edit-form">
+  <h3 class="container-title col-11 m-auto">Contribuable ({{activationCode}})</h3>
+  <form class="col-10 m-auto" [formGroup]="formGroup">
+    <div class="line-up">
+      <div class="d-flex">
+        <div class="field-box">
+          <h6 class="label">Nom</h6>
+          <app-input-text [id]="'lastname'" [formGroup]="formGroup" [placeholder]="'Nom'"
+                          [type]="'text'" [value]="lastname" (keyUpEvent)="onDataChanged()"></app-input-text>
+        </div>
+        <div class="field-box">
+          <h6 class="label">Prénom</h6>
+          <app-input-text [id]="'name'" [formGroup]="formGroup" [placeholder]="'Prénom'"
+                          [type]="'text'" [value]="name" (keyUpEvent)="onDataChanged()"></app-input-text>
+        </div>
+      </div>
+      <div class="d-flex ">
+        <div class="field-box">
+          <h6 class="label">Téléphone</h6>
+          <app-input-text [id]="'phoneNumber'" [formGroup]="formGroup" [placeholder]="'Téléphone'"
+                          [type]="'text'" [value]="phoneNumber" (keyUpEvent)="onDataChanged()"></app-input-text>
+        </div>
+        <div class="field-box">
+          <h6 class="label">Adresse</h6>
+          <app-input-text [id]="'address'" [formGroup]="formGroup" [placeholder]="'Adresse'"
+                          [type]="'text'" [multiligne]="true" [value]="address"
+                          (keyUpEvent)="onDataChanged()"></app-input-text>
+        </div>
+      </div>
+      <div class="d-flex">
+        <div class="field-box">
+          <h6 class="label">Pièce d'identité</h6>
+          <app-select-option
+            [options]="identityOptions"
+            [formGroup]="formGroup" [id]="'typeCarte'" [defaultSelected]="typeCarte" (changeEvent)="onDataChanged()"
+          ></app-select-option>
+        </div>
+        <div class="field-box">
+          <h6 class="label">ID. Identité</h6>
+          <app-input-text [id]="'identityId'" [formGroup]="formGroup" [placeholder]="'ID Pièce d\'identité'"
+                          [type]="'text'" [value]="identityId" (keyUpEvent)="onDataChanged()"></app-input-text>
+        </div>
+      </div>
+    </div>
+
+    <div class="contribuable-container-footer d-flex">
+      <div class="error-msg col-10">
+        {{errorMsg}}
+      </div>
+      <div class="col-2">
+        <div class="save-btn-box">
+          <app-button [id]="'btn-edit-contribuable'" [text]="'Modifier'" [withIcon]="true"
+                      [disabled]="isDisableBtnEdit"
+                      (clickEvent)="onEditContribuable($event)"
+          ></app-button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

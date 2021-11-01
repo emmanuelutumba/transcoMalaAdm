@@ -14,6 +14,8 @@ export class ButtonComponent implements OnInit {
   @Input() icon = '';
   @Output() clickEvent: EventEmitter<any> = new EventEmitter<any>();
 
+  @Input() disabled = false;
+
   constructor() {
   }
 
@@ -23,5 +25,4 @@ export class ButtonComponent implements OnInit {
   onClick(btn) {
     this.clickEvent.emit(btn);
   }
-
 }

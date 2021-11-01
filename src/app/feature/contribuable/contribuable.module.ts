@@ -10,11 +10,12 @@ import {RouterModule} from '@angular/router';
 import { ContraventionComponent } from './components/contravention/contravention.component';
 import { TaxeComponent } from './components/taxe/taxe.component';
 import { DriverComponent } from './components/driver/driver.component';
+import { ContribuableEditFormComponent } from './components/contribuable-edit-form/contribuable-edit-form.component';
 
 
 
 @NgModule({
-  declarations: [ContribuableContainerComponent, ContribuableFormComponent, ContribuableDetailComponent, ContraventionComponent, TaxeComponent, DriverComponent],
+  declarations: [ContribuableContainerComponent, ContribuableFormComponent, ContribuableDetailComponent, ContraventionComponent, TaxeComponent, DriverComponent, ContribuableEditFormComponent],
     imports: [
         CommonModule,
         SharedModule,

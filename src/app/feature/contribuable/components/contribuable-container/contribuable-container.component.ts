@@ -27,6 +27,7 @@ export class ContribuableContainerComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.contribuableService.load();
     this.contribuableService.getAll().subscribe((data) => {
       console.log(data);
 
@@ -55,18 +56,42 @@ export class ContribuableContainerComponent implements OnInit {
         this.router.navigate(['main/contribuable/add']);
         break;
       case '2':
-        console.log(this.selectedItem === undefined);
-        console.log(this.selectedItem === 'undefined');
         if (this.selectedItem !== undefined) {
+          this.onDisabledItem();
           this.router.navigate(['main/contribuable/detail/' + this.selectedItem]);
         }
         break;
+      case '3':
+        this.router.navigate(['main/contribuable/edit/' + this.selectedItem]);
+        break;
+      case '4': {
+        this.contribuableService.delete(this.selectedItem).subscribe((httpResponse) => {
+          console.log(httpResponse);
+          if (httpResponse.code === '200') {
+            this.contribuableService.load();
+            this.onDisabledItem();
+          }
+        });
+        break;
+      }
     }
   }
 
   onSelectItem(id) {
     this.selectedItem = id;
     this.isDisableOptions = false;
+    this.options = [{id: 1, value: 'Nouveau'}, {id: 2, value: 'Détail', disable: this.isDisableOptions}, {
+      id: 3,
+      value: 'Editer',
+      disable: this.isDisableOptions
+    }, {
+      id: 4,
+      value: 'Supprimer', disable: this.isDisableOptions
+    }];
+  }
+
+  onDisabledItem() {
+    this.isDisableOptions = true;
     this.options = [{id: 1, value: 'Nouveau'}, {id: 2, value: 'Détail', disable: this.isDisableOptions}, {
       id: 3,
       value: 'Editer',

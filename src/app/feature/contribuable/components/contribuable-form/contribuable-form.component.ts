@@ -97,6 +97,7 @@ export class ContribuableFormComponent implements OnInit {
         const contribuable = this.formGroup.value;
         contribuable.id = null;
         contribuable.vehicules = this.vehiculesToSave;
+        contribuable.identityId = contribuable.typeCarte + '/' + contribuable.identityId;
 
         console.log(contribuable);
 

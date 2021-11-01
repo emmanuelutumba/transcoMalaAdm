@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormGroup} from '@angular/forms';
 
 @Component({
@@ -12,7 +12,8 @@ export class SelectOptionComponent implements OnInit {
   @Input() formGroup: FormGroup;
   @Input() options = [];
   @Input() defaultTitle = 'default';
-  defaultSelected = 'default';
+  @Input() defaultSelected = '';
+  @Output() changeEvent: EventEmitter<any> = new EventEmitter<any>();
 
   constructor() {
   }
@@ -20,4 +21,7 @@ export class SelectOptionComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onChangeEvent() {
+    this.changeEvent.emit();
+  }
 }

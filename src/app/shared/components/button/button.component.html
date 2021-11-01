@@ -1,4 +1,4 @@
-<button #btn (click)="onClick(btn)" class="btn btn-light button m-auto d-block"
+<button #btn (click)="onClick(btn)" class="btn btn-light button m-auto d-block" [disabled]="disabled"
         [id]="id" type="button"
         [ngStyle]="{'width':width}">
   <i *ngIf="withIcon" [ngClass]="icon"></i> {{text}}

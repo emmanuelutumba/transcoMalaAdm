@@ -3,7 +3,7 @@
          [formControlName]="id" [value]="value"
          [placeholder]="placeholder"
          [name]="id"
-         [type]="type" autocomplete="off"/>
+         [type]="type" autocomplete="off" (keyup)="onKeyUpEvent()"/>
 
 </div>
 <div [formGroup]="formGroup" *ngIf="multiligne">
@@ -11,6 +11,6 @@
             [formControlName]="id" [value]="value"
             [placeholder]="placeholder"
             [name]="id"
-            autocomplete="off"></textarea>
+            autocomplete="off" (keyup)="onKeyUpEvent()"></textarea>
 
 </div>
