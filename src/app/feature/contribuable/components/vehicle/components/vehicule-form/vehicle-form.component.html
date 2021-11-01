@@ -1,0 +1,75 @@
+<div class="vehicule-form modal" [ngStyle]="{'display':displayMeForm}">
+  <div class="modal-content">
+    <div class="modal-header">
+      <div class="modal-title">
+        Véhicule
+      </div>
+      <div class="btn-close" (click)="closeMe()">
+      </div>
+    </div>
+    <div class="modal-body">
+      <form class="col-10 m-auto" [formGroup]="formGroup">
+        <div class="line-up">
+          <div class="d-flex">
+            <div class="field-box">
+              <h6 class="label">Marque </h6>
+              <app-input-text [id]="'brand'" [formGroup]="formGroup" [placeholder]="'Marque'"
+                              [type]="'text'"></app-input-text>
+            </div>
+            <div class="field-box">
+              <h6 class="label">Modèle</h6>
+              <app-input-text [id]="'modele'" [formGroup]="formGroup" [placeholder]="'Modèle'"
+                              [type]="'text'"></app-input-text>
+            </div>
+          </div>
+          <div class="d-flex">
+            <div class="field-box">
+              <h6 class="label">Numéro de plaque</h6>
+              <app-input-text [id]="'idNumber'" [formGroup]="formGroup" [placeholder]="'Numéro de plaque'"
+                              [type]="'text'"></app-input-text>
+            </div>
+            <div class="field-box">
+              <h6 class="label">N° d'assurance</h6>
+              <app-input-text [id]="'insurance'" [formGroup]="formGroup" [placeholder]="'Assurance'"
+                              [type]="'text'"></app-input-text>
+            </div>
+          </div>
+          <div class="d-flex">
+            <div class="field-box">
+              <h6 class="label">N° volet jaune</h6>
+              <app-input-text [id]="'voletJaune'" [formGroup]="formGroup" [placeholder]="'Volet jaune'"
+                              [type]="'text'"></app-input-text>
+            </div>
+            <div class="field-box">
+              <h6 class="label">N° Carte rose</h6>
+              <app-input-text [id]="'carteRose'" [formGroup]="formGroup" [placeholder]="'Carte rose'"
+                              [type]="'text'"></app-input-text>
+            </div>
+          </div>
+        </div>
+        <div class="line-up">
+          <div class="toolbar d-flex">
+            <h3 class="title col-2">Conducteur</h3>
+            <div class="col-10">
+              <div class="btn-add-vehicle">
+                <app-button [withIcon]="true" [icon]="'fa fa-pencil'" [id]="'add-driver'"
+                            (clickEvent)="onOpenDriverForm()"></app-button>
+              </div>
+            </div>
+          </div>
+          <app-table-model [withRm]="true" [headers]="headers"
+                           [datas]="drivers" (eventRemoveItem)="onRemoveDriver($event)"></app-table-model>
+        </div>
+      </form>
+      <app-driver-form (eventSave)="onAddDriver($event)" [display]="displayDriverForm"
+                       (eventClose)="onCloseDriverForm()"></app-driver-form>
+    </div>
+    <div class="modal-footer">
+      <div class="error-msg col-11">
+        {{errorMsg}}
+      </div>
+      <app-button [id]="'btn-create-vehcle'" [text]="'Ajouter'" [withIcon]="true"
+                  (clickEvent)="onSave()"></app-button>
+    </div>
+  </div>
+</div>

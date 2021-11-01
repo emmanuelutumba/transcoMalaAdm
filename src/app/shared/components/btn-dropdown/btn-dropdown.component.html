@@ -4,6 +4,7 @@
           aria-expanded="false">{{title}}</button>
   <div class="dropdown-menu">
     <div #opt (click)="onSelectItem(opt)" class="dropdown-item" *ngFor="let data of datas"
+         [title]="isDisabled(opt,data.disable)"
          [id]="data.id">{{data.value}}</div>
   </div>
 </div>

@@ -3,9 +3,20 @@
   padding-bottom: 30px;
 }
 
+.vehicule-form .modal-content {
+  width: 70%;
+  box-shadow: 0 0 7px #b6b6b6;
+  border: 1px solid #e7e7e7;
+  border-radius: 2px;
+  margin: auto;
+}
+
+.vehicule-form .modal-header {
+  background: linear-gradient(to top, #c5c5c5 -100%, #e8e8e8);
+}
+
 .vehicule-form form {
   overflow: auto;
-  height: 80vh;
 }
 
 .vehicule-form .btn-close {
@@ -13,11 +24,6 @@
   font-size: 10px;
   cursor: pointer;
   color: #414040;
-}
-
-.vehicule-form form {
-  width: 80%;
-  margin: auto;
 }
 
 .vehicule-form form .field-box {

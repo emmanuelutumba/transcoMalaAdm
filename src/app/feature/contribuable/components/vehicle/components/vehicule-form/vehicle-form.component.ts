@@ -1,19 +1,22 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import $ from 'jquery';
-import {DriverModel} from '../../../../core/model/driver.model';
-import {VehicleService} from '../../../../core/services/vehicle.service';
+import {VehicleService} from '../../../../../../core/services/vehicle.service';
 import {Router} from '@angular/router';
 
 @Component({
-  selector: 'app-add-vehicle-dialog',
+  selector: 'app-vehicle-form',
   templateUrl: './vehicle-form.component.html',
   styleUrls: ['./vehicle-form.component.css']
 })
 export class VehicleFormComponent implements OnInit {
 
-  @Input() display = 'none';
+  @Input() displayMeForm = 'none';
+  @Input() displayDriverForm = 'none';
+
   @Output() eventClose: EventEmitter<any> = new EventEmitter<any>();
+  @Output() eventSave: EventEmitter<any> = new EventEmitter<any>();
+
 
   formGroup: FormGroup;
   loginBtn: any;
@@ -28,6 +31,7 @@ export class VehicleFormComponent implements OnInit {
   errorMsg = '';
   headers = ['Prénom', 'Nom', 'Téléphone', 'Pièce d\'identité. ID', 'Adresse', 'N° Permis', 'Date d\expiration du permis'];
 
+
   constructor(private formBuilder: FormBuilder, private router: Router, private vehicleService: VehicleService) {
   }
 
@@ -37,16 +41,26 @@ export class VehicleFormComponent implements OnInit {
         brand: ['', Validators.required],
         modele: ['', Validators.required],
         idNumber: ['', Validators.required],
-        name: ['', Validators.required],
-        lastname: ['', Validators.required],
-        phoneNumber: ['', Validators.required],
-        address: ['', Validators.required],
-        identityId: ['', Validators.required],
-        typeCarte: ['', Validators.required],
         insurance: [''],
         voletJaune: [''],
         carteRose: [''],
       });
+  }
+
+  onSave() {
+    this.errorMsg = '';
+
+    const status = this.formGroup.status;
+    console.log(this.formGroup.value);
+    console.log(this.formGroup.status);
+    if (status === 'VALID') {
+      this.formGroup.value.chauffeurs = this.drivers;
+      this.eventSave.emit(this.formGroup.value);
+      this.formGroup.reset();
+      this.drivers = [];
+    } else {
+      this.errorMsg = 'Veuillez renseigner tout les champs';
+    }
   }
 
   onAddDriver(data) {
@@ -63,7 +77,7 @@ export class VehicleFormComponent implements OnInit {
     };
 
     this.drivers.push(driver);
-    this.display = 'none';
+    this.displayDriverForm = 'none';
   }
 
   onRemoveDriver(id) {
@@ -78,65 +92,17 @@ export class VehicleFormComponent implements OnInit {
   }
 
   onCreateVehicle(el) {
-    this.loginBtn = el;
-
-    this.errorMsg = '';
-    const status = this.formGroup.status;
-
-    if (status === 'VALID') {
-      this.loading(true);
-
-      const data = this.formGroup.value;
-
-      const dataVehicle = {
-        brand: data.brand,
-        modele: data.modele,
-        idNumber: data.idNumber,
-        insuranceId: data.insurance,
-        voletJauneId: data.voletJaune,
-        carteRoseId: data.carteRose,
-        proprietaire: {
-          name: data.name,
-          lastname: data.lastname,
-          phoneNumber: data.phoneNumber,
-          address: data.address,
-          identityId: data.typeCarte + '/' + data.identityId
-        },
-        chauffeurs: this.drivers
-      };
-
-      console.log(dataVehicle);
-      this.vehicleService.add(dataVehicle).subscribe(httpResponse => {
-        this.loading(false);
-        console.log(httpResponse);
-        if (httpResponse.code === '200') {
-          this.router.navigate(['main/vehicle']);
-        } else {
-          this.errorMsg = httpResponse.message;
-        }
-      });
-    } else {
-      this.errorMsg = 'Veuillez renseigner tout les champs';
-    }
   }
 
-  loading(load: boolean) {
-    const btn = $(this.loginBtn);
-    if (load) {
-      btn.attr('disabled', 'disabled');
-      btn.find('i').attr('class', 'fa fa-spin fa-spinner');
-    } else {
-      btn.attr('disabled', false);
-      btn.find('i').attr('class', '');
-    }
+  onOpenDriverForm() {
+    this.displayDriverForm = 'block';
   }
 
-  onOpenFormDriver() {
-    this.display = 'block';
+  onCloseDriverForm() {
+    this.displayDriverForm = 'none';
   }
 
-  onCloseFormDriver() {
-    this.display = 'none';
+  closeMe() {
     this.eventClose.emit();
   }
 }

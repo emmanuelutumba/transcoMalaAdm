@@ -46,7 +46,7 @@
         <h3 class="title col-2">Véhicule</h3>
         <div class="col-10">
           <div class="btn-add-vehicle">
-            <app-button [withIcon]="true" [icon]="'fa fa-pencil'" [id]="'add-driver'"
+            <app-button [withIcon]="true" [icon]="'fa fa-pencil'" [id]="'add-vehicle'"
                         (clickEvent)="onOpenVehicleForm()"></app-button>
           </div>
         </div>
@@ -54,6 +54,20 @@
       <app-table-model [withRm]="true" [headers]="headers"
                        [datas]="vehicles" (eventRemoveItem)="onRemoveSelectedVehicle($event)"></app-table-model>
     </div>
+    <div class="contribuable-container-footer d-flex">
+      <div class="error-msg col-8">
+        {{errorMsg}}
+      </div>
+      <div class="col-4">
+        <div class="save-btn-box">
+          <app-button [id]="'btn-contribuable'" [text]="'Enregistrer'" [withIcon]="true"
+                      (clickEvent)="onCreateContrible($event)"></app-button>
+        </div>
+      </div>
+    </div>
   </form>
+  <app-vehicle-form (eventSave)="onAddVehicle($event)" [displayMeForm]="displayVehicleForm"
+                    (eventClose)="onCloseVehicleForm()"></app-vehicle-form>
+
 
 </div>

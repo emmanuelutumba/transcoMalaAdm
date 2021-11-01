@@ -1,8 +1,5 @@
-<div class="vehicle-container">
+<div class="taxe-container">
   <div class="toolbar">
-    <div class="title">
-      Véhicules
-    </div>
     <div class="d-flex">
       <app-search-bar [id]="'search-car'" [placeholder]="'Numéro de plaque'"></app-search-bar>
       <app-btn-dropdown [title]="'Option'" [datas]="options"
@@ -10,6 +7,6 @@
     </div>
   </div>
   <div class="main-body">
-    <app-table-model [datas]="vehicules" [headers]="headers"></app-table-model>
+    <app-table-model [datas]="taxes" [headers]="headers"></app-table-model>
   </div>
 </div>

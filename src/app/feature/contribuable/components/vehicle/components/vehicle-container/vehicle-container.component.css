@@ -1,6 +1,7 @@
 .vehicle-container .toolbar {
   min-height: 60px;
   padding: 10px;
+  margin-top: 20px;
 }
 
 .vehicle-container .toolbar .title {

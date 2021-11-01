@@ -1,1 +1,19 @@
-<p>contribuable-container works!</p>
+<div class="contribuable-container">
+  <div class="toolbar">
+    <div class="title">
+      Contribuable
+    </div>
+    <div class="d-flex option-box">
+      <div class="search-box col-8">
+        <app-search-bar [id]="'search-car'" [placeholder]="'Numéro de plaque'"></app-search-bar>
+      </div>
+      <app-btn-dropdown [title]="'Option'" [datas]="options"
+                        (eventSelectedOption)="onOptionSelected($event)"></app-btn-dropdown>
+    </div>
+  </div>
+  <div class="main-body">
+
+    <app-table-model [headers]="headersContribuable" [datas]="contribuables"
+                     (eventSelectItem)="onSelectItem($event)"></app-table-model>
+  </div>
+</div>

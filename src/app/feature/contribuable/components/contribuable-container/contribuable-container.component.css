@@ -1,0 +1,18 @@
+.contribuable-container .toolbar {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 7px;
+}
+
+.contribuable-container .toolbar .title {
+  margin: 12px;
+}
+
+.contribuable-container .option-box {
+  width: 40%;
+}
+
+.contribuable-container .main-body {
+  height: 60vh;
+  overflow: auto;
+}

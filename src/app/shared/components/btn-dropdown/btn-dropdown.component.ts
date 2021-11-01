@@ -12,6 +12,21 @@ export class BtnDropdownComponent implements OnInit {
   @Input() id = '';
   @Input() height = '35px';
   @Output() eventSelectedOption: EventEmitter<any> = new EventEmitter<any>();
+  @Input() disabled = '';
+
+  isDisabled = (el, bool) => {
+    bool = (bool === undefined ? false : bool);
+    if (bool) {
+      $(el).css('pointer-events', 'none');
+      $(el).css('color', '#A2A2A2FF');
+      $(el).attr('disabled', true);
+    } else {
+      $(el).css('pointer-events', 'inherit');
+      $(el).css('color', '#414040');
+      $(el).attr('disabled', false);
+    }
+    return '';
+  };
 
   constructor() {
   }

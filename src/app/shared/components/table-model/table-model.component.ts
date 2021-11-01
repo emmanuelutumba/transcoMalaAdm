@@ -15,6 +15,7 @@ export class TableModelComponent implements OnInit {
   @Input() showId = false;
   @Input() withRm = false;
   @Output() eventRemoveItem: EventEmitter<any> = new EventEmitter<any>();
+  @Output() eventSelectItem: EventEmitter<any> = new EventEmitter<any>();
 
   constructor() {
   }
@@ -34,6 +35,7 @@ export class TableModelComponent implements OnInit {
     const parent = $(tr).parent();
     parent.find('.check-item').attr('class', 'check-item');
     $(tr).find('.check-item').attr('class', 'check-item table-model-active');
+    this.eventSelectItem.emit($(tr).attr('id'));
   }
 
   onRemoveItem(id) {

@@ -24,7 +24,7 @@
   width: 50%;
 }
 
-.contribuable-container form .field-box .label{
+.contribuable-container form .field-box .label {
   color: #4d4d4d;
   font-size: 13px;
 }
@@ -36,5 +36,16 @@
 
 .contribuable-container form .btn-add-vehicle {
   min-width: 10px;
+  float: right;
+  margin-right: 7px;
+}
+
+.contribuable-container .contribuable-container-footer .error-msg {
+  font-size: 13px;
+  color: red;
+}
+
+.contribuable-container .contribuable-container-footer .save-btn-box {
+  min-width: 20px;
   float: right;
 }

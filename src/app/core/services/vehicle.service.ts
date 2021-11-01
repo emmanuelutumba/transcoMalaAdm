@@ -35,6 +35,19 @@ export class VehicleService {
     }));
   }
 
+  getListByContribuable(id: number): Observable<any> {
+    return this.http.get<any>(this.url).pipe(map(data => {
+      console.log('vehicules: ', data);
+      if (data.code === '200') {
+        const vehiculeData = data.data.filter(vehicule => {
+          return vehicule.proprietaire.id === id;
+        });
+        data.data = vehiculeData;
+      }
+      return data;
+    }));
+  }
+
   searchByIdNumber(idNumber: string): Observable<HttpResponseModel<VehicleModel[]>> {
     return this.http.get<HttpResponseModel<VehicleModel[]>>(this.url).pipe(map(data => {
       if (data.code === '200') {
