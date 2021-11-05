@@ -1,0 +1,65 @@
+<div class="driver-form-d modal" [ngStyle]="{'display':display}">
+  <div class="modal-content">
+    <div class="modal-header">
+      <div class="modal-title">
+        Nouveau conducteur
+      </div>
+      <div class="btn-close" (click)="onClose()"></div>
+    </div>
+    <div class="modal-body">
+      <form [formGroup]="formGroup">
+        <div class="d-flex">
+          <div class="field-box col-6">
+            <h6 class="label">Nom</h6>
+            <app-input-text [formGroup]="formGroup" [id]="'lastname'" [placeholder]="'Nom'"></app-input-text>
+          </div>
+          <div class="field-box col-6">
+            <h6 class="label">Prénom</h6>
+            <app-input-text [formGroup]="formGroup" [id]="'name'" [placeholder]="'Prénom'"></app-input-text>
+          </div>
+        </div>
+        <div class="d-flex">
+          <div class="field-box col-6">
+            <h6 class="label">Pièce d'identité</h6>
+            <app-select-option
+              [options]="options"
+              [formGroup]="formGroup" [id]="'typeCarte'"
+            ></app-select-option>
+          </div>
+          <div class="field-box col-6">
+            <h6 class="label">ID</h6>
+            <app-input-text [formGroup]="formGroup" [id]="'identityId'"
+                            [placeholder]="'ID Pièce d\'identité'"></app-input-text>
+          </div>
+        </div>
+        <div class="d-flex">
+          <div class="field-box col-6">
+            <h6 class="label">ID. Permis de conduire</h6>
+            <app-input-text [formGroup]="formGroup" [id]="'licenceNumber'" [placeholder]="'N°'"></app-input-text>
+          </div>
+          <div class="field-box col-6">
+            <h6 class="label">Date d'expiration du permis</h6>
+            <app-input-text [type]="'date'" [formGroup]="formGroup" [id]="'expireDateLicenceNumber'"></app-input-text>
+          </div>
+        </div>
+        <div class="d-flex">
+          <div class="field-box col-6">
+            <h6 class="label">Téléphone</h6>
+            <app-input-text [formGroup]="formGroup" [id]="'phoneNumber'" [placeholder]="'Téléphone'"></app-input-text>
+          </div>
+          <div class="field-box col-6">
+            <h6 class="label">Adresse</h6>
+            <app-input-text [formGroup]="formGroup" [id]="'address'" [placeholder]="'Adresse'"
+                            [multiligne]="true"></app-input-text>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <div class="msg-box">
+        {{errorMsg}}
+      </div>
+      <app-button [id]="'driver-form-add'" [text]="'Ajouter'" (clickEvent)="onSave()" [withIcon]="true"></app-button>
+    </div>
+  </div>
+</div>

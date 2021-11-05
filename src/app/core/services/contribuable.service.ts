@@ -11,6 +11,7 @@ import {HttpResponseModel} from '../../shared/model/HttpResponse.model';
 export class ContribuableService {
   private url = environment.baseUrl + 'proprietaire';
   subject: Subject<any> = new Subject<any>();
+  subjectContrById: Subject<any> = new Subject<any>();
 
   constructor(private http: HttpClient) {
   }
@@ -21,6 +22,10 @@ export class ContribuableService {
       this.subject.next(data);
       return data;
     })).subscribe();
+  }
+
+  public loadById(): Observable<any> {
+    return this.subjectContrById.asObservable();
   }
 
   public getAll(): Observable<any> {
@@ -38,6 +43,20 @@ export class ContribuableService {
       }
       return data;
     }));
+  }
+
+  public getContribuableById(id: number) {
+    this.http.get<HttpResponseModel<any>>(this.url).pipe(map(data => {
+      console.log(data, id);
+      if (data.code === '200') {
+        const dataContr = data.data.filter(value => {
+          return value.id === id;
+        });
+        data.data = dataContr;
+        this.subjectContrById.next(data);
+      }
+      return data;
+    })).subscribe();
   }
 
   save(owner): Observable<any> {

@@ -43,9 +43,9 @@ export class ContribuableFormComponent implements OnInit {
       brand: data.brand,
       modele: data.modele,
       idNumber: data.idNumber,
-      insurance: data.insurance,
-      voletJaune: data.voletJaune,
-      carteRose: data.carteRose
+      insuranceId: data.insuranceId,
+      voletJauneId: data.voletJauneId,
+      carteRoseId: data.carteRoseId,
     };
 
     this.vehicles.push(vehicule);
@@ -55,9 +55,9 @@ export class ContribuableFormComponent implements OnInit {
       brand: data.brand,
       modele: data.modele,
       idNumber: data.idNumber,
-      insuranceId: data.insurance,
-      voletJauneId: data.voletJaune,
-      carteRoseId: data.carteRose,
+      insuranceId: data.insuranceId,
+      voletJauneId: data.voletJauneId,
+      carteRoseId: data.carteRoseId,
       chauffeurs: data.chauffeurs
     };
     this.vehiculesToSave.push(vehiculeToSave);

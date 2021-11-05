@@ -1,0 +1,14 @@
+.confirm-dialog {
+  padding-top: 12vh;
+}
+
+.confirm-dialog .modal-content {
+  width: 20%;
+  box-shadow: 0 0 7px #b6b6b6;
+  border: 1px solid #e7e7e7;
+  border-radius: 2px;
+  height: 121px;
+  margin: auto;
+  text-align: center;
+  font-size: 14px;
+}

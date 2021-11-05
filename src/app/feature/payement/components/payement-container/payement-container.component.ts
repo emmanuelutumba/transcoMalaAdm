@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import $ from 'jquery';
 
 @Component({
   selector: 'app-payement-container',
@@ -8,19 +9,18 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 })
 export class PayementContainerComponent implements OnInit {
 
-  formGroup: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {
 
   }
 
   ngOnInit(): void {
-    this.formGroup = this.formBuilder.group([
-      {
-        numeroPlaque: ['', Validators.required],
-        taxe: ['', Validators.required]
-      }
-    ]);
+
   }
 
+  onSelectedTab(btn) {
+    console.log(btn);
+    $('.payement-container').find('.btn-tab').attr('class', 'btn-tab btn btn-info');
+    $(btn).attr('class', 'btn-tab btn btn-info active-tab');
+  }
 }

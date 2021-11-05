@@ -1,0 +1,31 @@
+<div class="payement-taxe">
+  <div class="payement-form d-flex">
+    <form class="m-auto col-9" [formGroup]="formGroup">
+      <div class="line-up d-flex">
+        <div class="field-box">
+          <h6 class="label">N° d'immatriculation</h6>
+          <app-input-text [id]="'idNumber'" [formGroup]="formGroup"
+                          [placeholder]="'N° d\'immatricule'"></app-input-text>
+        </div>
+        <div class="field-box">
+          <h6 class="label">Taxe</h6>
+          <app-select-option [options]="types" [id]="'typeReason'" [formGroup]="formGroup"></app-select-option>
+        </div>
+      </div>
+      <div class="line-up d-flex">
+        <div class="field-box">
+          <h6 class="label">Montant</h6>
+          <app-input-text [id]="'montant'" [formGroup]="formGroup"
+                          [placeholder]="'N° d\'immatricule'"></app-input-text>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="paiement-detail-box">
+    <div class="search-box col-4 p-2">
+      <app-search-bar (keyUpEvent)="onSearch($event)" [id]="'search-car'"
+                      [placeholder]="'Numéro de plaque'"></app-search-bar>
+    </div>
+    <app-table-model [datas]="taxes" [headers]="headers" [withStatus]="true"></app-table-model>
+  </div>
+</div>

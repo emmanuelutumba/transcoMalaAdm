@@ -1,12 +1,14 @@
 <div class="contravention-container">
   <div class="toolbar">
     <div class="d-flex">
-      <app-search-bar [id]="'search-car'" [placeholder]="'Numéro de plaque'"></app-search-bar>
+      <app-search-bar (keyUpEvent)="onSearch($event)" [id]="'search-car'" [placeholder]="'Numéro de plaque'"></app-search-bar>
       <app-btn-dropdown [title]="'Option'" [datas]="options"
                         (eventSelectedOption)="onOptionSelected($event)"></app-btn-dropdown>
     </div>
   </div>
   <div class="main-body">
-    <app-table-model [datas]="contraventions" [headers]="headers"></app-table-model>
+    <app-table-model [datas]="contraventions" [headers]="headers" [withStatus]="true"
+                     (eventSelectItem)="onItemSelected($event)"
+                     (eventDataSelectedItem)="onItemSelectedData($event)"></app-table-model>
   </div>
 </div>

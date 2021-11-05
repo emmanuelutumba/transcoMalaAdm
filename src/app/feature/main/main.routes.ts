@@ -12,10 +12,12 @@ import {VehicleFormComponent} from '../contribuable/components/vehicle/component
 import {ContribuableFormComponent} from '../contribuable/components/contribuable-form/contribuable-form.component';
 import {ContribuableContainerComponent} from '../contribuable/components/contribuable-container/contribuable-container.component';
 import {ContribuableDetailComponent} from '../contribuable/components/contribuable-detail/contribuable-detail.component';
-import {DriverComponent} from '../contribuable/components/driver/driver.component';
+import {DriverComponent} from '../contribuable/components/driver/components/driver-container/driver.component';
 import {TaxeComponent} from '../contribuable/components/taxe/taxe.component';
 import {ContraventionComponent} from '../contribuable/components/contravention/contravention.component';
 import {ContribuableEditFormComponent} from '../contribuable/components/contribuable-edit-form/contribuable-edit-form.component';
+import {PayementTaxeComponent} from '../payement/components/payement-taxe/payement-taxe.component';
+import {PayementContraventionComponent} from '../payement/components/payement-contravention/payement-contravention.component';
 
 export const MainRoutes: Routes = [
   {
@@ -40,7 +42,19 @@ export const MainRoutes: Routes = [
       },
       {
         path: 'payement',
-        component: PayementContainerComponent
+        component: PayementContainerComponent,
+        children: [
+          {
+            path: '',
+            component: PayementTaxeComponent
+          }, {
+            path: 'taxe',
+            component: PayementTaxeComponent
+          }, {
+            path: 'contravention',
+            component: PayementContraventionComponent
+          }
+        ]
       }, {
         path: 'vehicle',
         component: VehicleContainerComponent

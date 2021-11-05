@@ -28,7 +28,7 @@
   border-top: none;
 }
 
-.table-model tbody tr{
+.table-model tbody tr {
   cursor: pointer;
 }
 
@@ -40,11 +40,29 @@
   margin: 2px;
 }
 
-.table-model-active{
+.table-model-active {
   background: linear-gradient(to top, #01355A, #036AB4);
 }
 
-.table-model tbody tr td .rm-item{
+.table-model tbody tr td .rm-item {
 
+}
+
+.table-model .status-item {
+  height: 12px;
+  width: 12px;
+  border-radius: 12px;
+}
+
+.table-model .fill-green {
+  background-color: green;
+}
+
+.table-model .fill-orange {
+  background-color: orange;
+}
+
+.table-model .fill-red {
+  background-color: red;
 }
 

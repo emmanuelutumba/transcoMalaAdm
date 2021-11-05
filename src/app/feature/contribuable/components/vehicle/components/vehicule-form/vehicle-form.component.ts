@@ -41,9 +41,9 @@ export class VehicleFormComponent implements OnInit {
         brand: ['', Validators.required],
         modele: ['', Validators.required],
         idNumber: ['', Validators.required],
-        insurance: [''],
-        voletJaune: [''],
-        carteRose: [''],
+        insuranceId: [''],
+        voletJauneId: [''],
+        carteRoseId: [''],
       });
   }
 
@@ -51,8 +51,6 @@ export class VehicleFormComponent implements OnInit {
     this.errorMsg = '';
 
     const status = this.formGroup.status;
-    console.log(this.formGroup.value);
-    console.log(this.formGroup.status);
     if (status === 'VALID') {
       this.formGroup.value.chauffeurs = this.drivers;
       this.eventSave.emit(this.formGroup.value);

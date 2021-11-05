@@ -16,6 +16,8 @@ export class TableModelComponent implements OnInit {
   @Input() withRm = false;
   @Output() eventRemoveItem: EventEmitter<any> = new EventEmitter<any>();
   @Output() eventSelectItem: EventEmitter<any> = new EventEmitter<any>();
+  @Output() eventDataSelectedItem: EventEmitter<any> = new EventEmitter<any>();
+  @Input() withStatus = false;
 
   constructor() {
   }
@@ -24,7 +26,7 @@ export class TableModelComponent implements OnInit {
   }
 
   isShowCol(id, item) {
-    if (item.key === 'id') {
+    if (item.key === 'id' || item.key === 'status') {
       $('#' + id).hide();
       return false;
     }
@@ -35,7 +37,9 @@ export class TableModelComponent implements OnInit {
     const parent = $(tr).parent();
     parent.find('.check-item').attr('class', 'check-item');
     $(tr).find('.check-item').attr('class', 'check-item table-model-active');
-    this.eventSelectItem.emit($(tr).attr('id'));
+    const id = $(tr).attr('id');
+    console.log('itemId: ', id);
+    this.eventSelectItem.emit(id);
   }
 
   onRemoveItem(id) {
@@ -45,5 +49,12 @@ export class TableModelComponent implements OnInit {
 
   asIsOrder(a, b) {
     return 1;
+  }
+
+  getData(data: any) {
+    this.eventDataSelectedItem.emit(data);
+  }
+  trackById(index, item) {
+    return item.id;
   }
 }

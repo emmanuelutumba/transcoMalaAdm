@@ -17,7 +17,7 @@
   </tr>
   </thead>
   <tbody>
-  <tr #tr [id]="data.id" *ngFor="let data of datas" (click)="onSelectedItem(tr)">
+  <tr #tr [id]="data.id" *ngFor="let data of datas;trackBy:trackById" (click)="onSelectedItem(tr);getData(data)">
     <td *ngIf="showCheck">
       <div class="check-item">
 
@@ -32,6 +32,17 @@
       <i class="fa fa-close rm-item" (click)="onRemoveItem(data.id)">
 
       </i>
+    </td>
+    <td *ngIf="withStatus">
+      <div class="status-item fill-green" *ngIf="data.status===1">
+
+      </div>
+      <div class="status-item fill-orange" *ngIf="data.status===2">
+
+      </div>
+      <div class="status-item fill-red" *ngIf="data.status===0">
+
+      </div>
     </td>
   </tr>
   </tbody>

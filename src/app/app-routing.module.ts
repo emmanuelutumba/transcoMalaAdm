@@ -25,6 +25,10 @@ const routes: Routes = [
       path: '',
       loadChildren: () => import('./feature/contribuable/contribuable.module').then(m => m.ContribuableModule)
     }
+    , {
+      path: '',
+      loadChildren: () => import('./feature/payement/payement.module').then(m => m.PayementModule)
+    }
   ]
 ;
 

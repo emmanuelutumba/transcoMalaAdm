@@ -1,0 +1,13 @@
+<div class="confirm-dialog modal" [ngStyle]="{'display':display}">
+  <div class="modal-content">
+    <div class="modal-body">
+      <div class="message">
+        {{message}}
+      </div>
+    </div>
+    <div class="modal-footer">
+      <app-button [text]="'Annuler'" (clickEvent)="onCancel()"></app-button>
+      <app-button [text]="'Confirmer'" (clickEvent)="onConfirm()"></app-button>
+    </div>
+  </div>
+</div>

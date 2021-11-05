@@ -95,12 +95,12 @@ export class ContribuableEditFormComponent implements OnInit {
       this.contribuableData.name = newData.name;
       this.contribuableData.lastname = newData.lastname;
       this.contribuableData.phoneNumber = newData.phoneNumber;
-      this.contribuableData.identityId = newData.name.typeCarte + '/' + newData.name.identityId;
+      this.contribuableData.identityId = newData.typeCarte + '/' + newData.identityId;
       this.contribuableData.address = newData.name;
       this.contribuableService.update(this.contribuableData).subscribe(data => {
         this.loadingSaveBtn(false);
         if (data.code === '200') {
-          this.router.navigate(['main/contribuable']);
+          this.router.navigate(['main/contribuable/detail/' + this.contribuableData.id]);
         } else {
           this.errorMsg = data.message;
         }

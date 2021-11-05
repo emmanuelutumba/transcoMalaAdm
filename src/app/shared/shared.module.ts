@@ -8,11 +8,13 @@ import { BtnDropdownComponent } from './components/btn-dropdown/btn-dropdown.com
 import { TableModelComponent } from './components/table-model/table-model.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { SelectOptionComponent } from './components/select-option/select-option.component';
+import { WaitingDialogComponent } from './components/waiting-dialog/waiting-dialog.component';
+import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 
 
 
 @NgModule({
-    declarations: [InputTextComponent, ButtonComponent, ItemOComponent,  BtnDropdownComponent, TableModelComponent, SearchBarComponent, SelectOptionComponent],
+    declarations: [InputTextComponent, ButtonComponent, ItemOComponent,  BtnDropdownComponent, TableModelComponent, SearchBarComponent, SelectOptionComponent, WaitingDialogComponent, ConfirmDialogComponent],
     exports: [
         InputTextComponent,
         ButtonComponent,
@@ -20,7 +22,8 @@ import { SelectOptionComponent } from './components/select-option/select-option.
         BtnDropdownComponent,
         TableModelComponent,
         SearchBarComponent,
-        SelectOptionComponent
+        SelectOptionComponent,
+        ConfirmDialogComponent
     ],
     imports: [
         CommonModule,

@@ -1,11 +1,20 @@
+.contribuable-container {
+  line-height: 1.5 !important;
+  padding: 3px;
+}
+
 .contribuable-container .toolbar {
-  padding-top: 15px;
-  padding-bottom: 15px;
-  padding-left: 7px;
+  padding-top: 5px;
+  padding-bottom: 10px;
 }
 
 .contribuable-container .toolbar .title {
-  margin: 12px;
+  font-size: 22px;
+  color: #414040;
+  font-weight: bold;
+  margin-top: 12px;
+  margin-left: 3px;
+  margin-bottom: 12px;
 }
 
 .contribuable-container .option-box {

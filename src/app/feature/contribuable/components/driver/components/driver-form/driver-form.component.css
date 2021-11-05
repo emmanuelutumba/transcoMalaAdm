@@ -1,0 +1,41 @@
+.driver-form-d {
+  padding-top: 10vh;
+  line-height: 1.5 !important;
+}
+
+.driver-form-d .modal-header {
+  background: linear-gradient(to top, #c5c5c5 -100%, #e8e8e8);
+}
+
+.driver-form-d .modal-content {
+  width: 50%;
+  box-shadow: 0 0 7px #b6b6b6;
+  border: 1px solid #e7e7e7;
+  border-radius: 2px;
+  margin: auto;
+}
+
+.driver-form-d .btn-close {
+  cursor: pointer;
+}
+
+.driver-form-d form {
+  width: 90%;
+  margin: auto;
+}
+
+.driver-form-d .field-box {
+  padding: 3px;
+  margin-top: 12px;
+}
+
+.driver-form-d .field-box .title {
+  font-size: 13px;
+  font-weight: 300;
+  color: #414040;
+}
+
+.driver-form-d .modal-footer .msg-box {
+  color: red;
+  font-size: 13px;
+}

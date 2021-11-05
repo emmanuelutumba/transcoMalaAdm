@@ -7,6 +7,12 @@
     </div>
   </div>
   <div class="main-body">
-    <app-table-model [datas]="vehicules" [headers]="headers"></app-table-model>
+    <app-table-model [datas]="vehicules" [headers]="headers" (eventSelectItem)="onSelectItem($event)"
+                     (eventDataSelectedItem)="onDataSelectedItem($event)"></app-table-model>
   </div>
+  <app-vehicle-form (eventSave)="onAddVehicle($event)" [displayMeForm]="displayVehicleForm"
+                    (eventClose)="onCloseVehicleForm()"></app-vehicle-form>
+  <app-vehicule-form-edit [vehicleSelected]="dataSelectedItem" (eventSave)="onEdit()"
+                          [displayMeForm]="displayVehicleFormEdit"
+                          (eventClose)="onCloseVehicleFormEdit()"></app-vehicule-form-edit>
 </div>

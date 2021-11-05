@@ -72,9 +72,10 @@
         <button #btn1 class="btn-tab btn btn-info" [routerLink]="['driver']" (click)="onSelectedTab(btn1)">Chauffeur
         </button>
         <button #btn2 class="btn-tab btn btn-info" [routerLink]="['taxe']" (click)="onSelectedTab(btn2)">Taxes à payé
+          ({{nbreTaxe}})
         </button>
         <button #btn3 class="btn-tab btn btn-info" [routerLink]="['contravention']" (click)="onSelectedTab(btn3)">
-          Contravention
+          Contravention ({{nbreContravention}})
         </button>
       </div>
       <router-outlet></router-outlet>

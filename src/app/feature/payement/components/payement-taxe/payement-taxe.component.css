@@ -1,0 +1,27 @@
+.payement-taxe {
+  width: 100%;
+}
+
+.payement-taxe .payement-form form .field-box {
+  padding: 7px;
+  width: 50%;
+}
+
+.payement-taxe .payement-form form {
+  padding-top: 30px;
+}
+
+.payement-taxe .payement-form form .line-up {
+  width: 100%;
+}
+
+.payement-taxe .paiement-detail-box {
+  margin-top: 20px;
+  border-top: 1px solid #e1e1e1;
+  padding-top: 20px;
+}
+
+.payement-taxe .payement-form .label {
+  font-size: 14px;
+  color: #414040;
+}

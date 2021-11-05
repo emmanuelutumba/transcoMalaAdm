@@ -1,0 +1,12 @@
+.waiting-dialog {
+  padding-top: 12vh;
+}
+
+.waiting-dialog .modal-content {
+  width: 20%;
+  box-shadow: 0 0 7px #b6b6b6;
+  border: 1px solid #e7e7e7;
+  border-radius: 2px;
+  height: 100px;
+  margin: auto;
+}
