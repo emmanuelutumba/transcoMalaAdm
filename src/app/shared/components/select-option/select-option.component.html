@@ -1,5 +1,5 @@
 <div [formGroup]="formGroup">
-  <select (change)="onChangeEvent()" [id]="id" [formGroup]="formGroup" class="form-control" [formControlName]="id" [(ngModel)]="defaultSelected">
+  <select #select (change)="onChangeEvent(select)" [id]="id" [formGroup]="formGroup" class="form-control" [formControlName]="id" [(ngModel)]="defaultSelected">
     <option *ngFor="let option of options;" [value]="option.key">
       {{option.value}}
     </option>

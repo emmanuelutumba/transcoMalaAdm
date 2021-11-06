@@ -10,11 +10,12 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
 import { SelectOptionComponent } from './components/select-option/select-option.component';
 import { WaitingDialogComponent } from './components/waiting-dialog/waiting-dialog.component';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
+import { SuccessDialogComponent } from './components/success-dialog/success-dialog.component';
 
 
 
 @NgModule({
-    declarations: [InputTextComponent, ButtonComponent, ItemOComponent,  BtnDropdownComponent, TableModelComponent, SearchBarComponent, SelectOptionComponent, WaitingDialogComponent, ConfirmDialogComponent],
+    declarations: [InputTextComponent, ButtonComponent, ItemOComponent,  BtnDropdownComponent, TableModelComponent, SearchBarComponent, SelectOptionComponent, WaitingDialogComponent, ConfirmDialogComponent, SuccessDialogComponent],
     exports: [
         InputTextComponent,
         ButtonComponent,
@@ -23,7 +24,8 @@ import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dial
         TableModelComponent,
         SearchBarComponent,
         SelectOptionComponent,
-        ConfirmDialogComponent
+        ConfirmDialogComponent,
+        SuccessDialogComponent
     ],
     imports: [
         CommonModule,

@@ -1,1 +1,14 @@
-<p>report-contravention works!</p>
+<div class="report-contravention d-block">
+  <div class="toolbar d-flex">
+    <div class="search-bar col-3">
+      <app-search-bar (keyup)="onSearch($event)" [id]="'search-car'" [placeholder]="'Numéro de plaque'">
+      </app-search-bar>
+    </div>
+    <div class="option-btn d-flex">
+      <app-btn-dropdown [id]="'reportInsId'" [title]="'Action'" [datas]="options"></app-btn-dropdown>
+    </div>
+  </div>
+  <div class="report-contravention-data">
+    <app-table-model [headers]="headers" [datas]="datas" [withStatus]="true" [loading]="isTableLoading"></app-table-model>
+  </div>
+</div>

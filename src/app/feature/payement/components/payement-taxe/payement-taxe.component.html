@@ -3,29 +3,91 @@
     <form class="m-auto col-9" [formGroup]="formGroup">
       <div class="line-up d-flex">
         <div class="field-box">
-          <h6 class="label">N° d'immatriculation</h6>
-          <app-input-text [id]="'idNumber'" [formGroup]="formGroup"
-                          [placeholder]="'N° d\'immatricule'"></app-input-text>
+          <h6 class="label">Taxe</h6>
+          <app-select-option [options]="taxes" [id]="'taxe'" [formGroup]="formGroup"
+            (changeEvent)="onSelectITaxe($event)"></app-select-option>
         </div>
         <div class="field-box">
-          <h6 class="label">Taxe</h6>
-          <app-select-option [options]="types" [id]="'typeReason'" [formGroup]="formGroup"></app-select-option>
+          <h6 class="label">N° d'immatriculation</h6>
+          <app-input-text [id]="'idNumber'" [formGroup]="formGroup" [placeholder]="'N° d\'immatricule'"
+            (keyUpEvent)="onIdNumberKeyUp($event)">
+          </app-input-text>
         </div>
       </div>
       <div class="line-up d-flex">
         <div class="field-box">
           <h6 class="label">Montant</h6>
-          <app-input-text [id]="'montant'" [formGroup]="formGroup"
-                          [placeholder]="'N° d\'immatricule'"></app-input-text>
+          <app-input-text [type]="'number'" [id]="'amount'" [formGroup]="formGroup" [placeholder]="'Montant'"
+            (keyUpEvent)="onAmountTyping($event)"></app-input-text>
+        </div>
+      </div>
+      <div class="line-up d-flex">
+        <div class="periode-box">
+          <h6 class="echeance-label">Echéance</h6>
+          <div class="field-main-box d-flex">
+            <div class="journalier-box col-4" *ngIf="displayDayOption">
+              <h6 class="label">Jour</h6>
+              <app-select-option [options]="echeanceJournalier" [defaultSelected]="daySelected"
+                [id]="'echeanceJournalier'" [formGroup]="formGroup" (changeEvent)="onSelectPeriode($event)">
+              </app-select-option>
+            </div>
+            <div class="month-box col-4" *ngIf="displayMonthOption">
+              <h6 class="label">Mois</h6>
+              <app-select-option [options]="echeanceMensuel" [defaultSelected]="monthSelected" [id]="'echeanceMensuel'"
+                [formGroup]="formGroup" (changeEvent)="onSelectPeriode($event)"></app-select-option>
+            </div>
+            <div class="annuel-box col-4">
+              <h6 class="label">Année</h6>
+              <app-select-option [options]="echeanceAnnuel" [defaultSelected]="yearSelected" [id]="'echeanceAnnuel'"
+                [formGroup]="formGroup" (changeEvent)="onSelectPeriode($event)"></app-select-option>
+            </div>
+          </div>
         </div>
       </div>
     </form>
   </div>
   <div class="paiement-detail-box">
-    <div class="search-box col-4 p-2">
-      <app-search-bar (keyUpEvent)="onSearch($event)" [id]="'search-car'"
-                      [placeholder]="'Numéro de plaque'"></app-search-bar>
+    <h6 class="detail-title">
+      <i class="fa fa-info-circle" aria-hidden="true"></i>
+      Détail
+    </h6>
+    <div class="detail-body d-flex p-3">
+      <table class="table">
+        <tbody>
+          <tr>
+            <td class="detail-label">Taxe</td>
+            <td>{{taxeSelected}}</td>
+          </tr>
+          <tr>
+            <td class="detail-label">Modalité</td>
+            <td>{{taxeModalite}}</td>
+          </tr>
+          <tr>
+            <td class="detail-label">Echeance du paiement</td>
+            <td>{{taxeEcheance}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="table">
+        <tbody>
+          <tr>
+            <td class="detail-label">N° d'immatriculation</td>
+            <td>{{idNumberVal}}</td>
+          </tr>
+          <tr>
+            <td class="detail-label">Montant payé</td>
+            <td>{{amountPaid}} {{deviseVal}}</td>
+          </tr>
+          <tr>
+            <td class="detail-label">Période</td>
+            <td>{{echeanceSelected}}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <app-table-model [datas]="taxes" [headers]="headers" [withStatus]="true"></app-table-model>
+    <div class="btn-confirm-box d-flex">
+      <h6 class="label">{{errorMsg}}</h6>
+      <app-button [withIcon]="true" [text]="'Valider'" (clickEvent)="onValideTransaction($event)"></app-button>
+    </div>
+    <app-success-dialog [display]="displaySuccessDialog" [message]="successMessage" (eventClose)="closeSuccessDialog()"></app-success-dialog>
   </div>
-</div>

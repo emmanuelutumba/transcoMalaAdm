@@ -1,16 +1,16 @@
 <div #item class="item-o" [id]="id" (click)="onClick(item)">
   <h3 class="item-o-title">{{title}}</h3>
-  <div class="d-flex">
+  <div class="d-flex item-option">
     <ul class="col-8">
-      <li class="d-flex paid-report">
+      <li class="d-flex paid-report" *ngIf="withPaidValue">
         <div class="item-signal"></div>
         <h6 class="title">Payées : {{paidValue}}</h6>
       </li>
-      <li class="d-flex average-paid-report">
+      <li class="d-flex average-paid-report" *ngIf="withAveragePaidValue">
         <div class="item-signal"></div>
         <h6 class="title">A moitié payées : {{averagePaidValue}}</h6>
       </li>
-      <li class="d-flex never-paid-report">
+      <li class="d-flex never-paid-report" *ngIf="withNeverPaidValue">
         <div class="item-signal"></div>
         <h6 class="title">Non payées : {{neverPaidValue}}</h6>
       </li>

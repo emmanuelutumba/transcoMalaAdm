@@ -1,16 +1,12 @@
 <div [formGroup]="formGroup" *ngIf="!multiligne">
-  <input [id]="id" class="form-control input-text"
-         [formControlName]="id" [value]="value"
-         [placeholder]="placeholder"
-         [name]="id"
-         [type]="type" autocomplete="off" (keyup)="onKeyUpEvent()"/>
+  <input #input [id]="id" class="form-control input-text" [formControlName]="id" [value]="value"
+    [placeholder]="placeholder" [name]="id" [disabled]="disabled" [type]="type" autocomplete="off"
+    (keyup)="onKeyUpEvent(input)" />
 
 </div>
 <div [formGroup]="formGroup" *ngIf="multiligne">
-  <textarea [id]="id" class="form-control input-text"
-            [formControlName]="id" [value]="value"
-            [placeholder]="placeholder"
-            [name]="id"
-            autocomplete="off" (keyup)="onKeyUpEvent()"></textarea>
+  <textarea #input [id]="id" class="form-control input-text" [formControlName]="id" [value]="value"
+    [placeholder]="placeholder" [name]="id" [disabled]="disabled" autocomplete="off"
+    (keyup)="onKeyUpEvent(input)"></textarea>
 
 </div>

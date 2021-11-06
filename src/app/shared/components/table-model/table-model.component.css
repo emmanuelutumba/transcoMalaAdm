@@ -41,11 +41,10 @@
 }
 
 .table-model-active {
-  background: linear-gradient(to top, #01355A, #036AB4);
+  background: linear-gradient(to top, #01355a, #036ab4);
 }
 
 .table-model tbody tr td .rm-item {
-
 }
 
 .table-model .status-item {
@@ -65,4 +64,13 @@
 .table-model .fill-red {
   background-color: red;
 }
+.table-data-loading .loading-icon {
+  width: 30px;
+  margin: auto;
+}
 
+.table-data-loading .loading-icon i {
+  text-align: center;
+  font-size: 30px;
+  color: #01355a;
+}

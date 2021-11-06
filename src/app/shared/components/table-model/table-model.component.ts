@@ -1,14 +1,13 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import $ from 'jquery';
-import {KeyValue} from '@angular/common';
+import { KeyValue } from '@angular/common';
 
 @Component({
   selector: 'app-table-model',
   templateUrl: './table-model.component.html',
-  styleUrls: ['./table-model.component.css']
+  styleUrls: ['./table-model.component.css'],
 })
 export class TableModelComponent implements OnInit {
-
   @Input() headers = [];
   @Input() datas = [];
   @Input() showCheck = true;
@@ -18,12 +17,11 @@ export class TableModelComponent implements OnInit {
   @Output() eventSelectItem: EventEmitter<any> = new EventEmitter<any>();
   @Output() eventDataSelectedItem: EventEmitter<any> = new EventEmitter<any>();
   @Input() withStatus = false;
+  @Input() loading = false;
 
-  constructor() {
-  }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   isShowCol(id, item) {
     if (item.key === 'id' || item.key === 'status') {

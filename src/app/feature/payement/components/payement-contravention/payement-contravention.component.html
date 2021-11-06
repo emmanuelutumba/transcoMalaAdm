@@ -1,1 +1,54 @@
-<p>payement-contravention works!</p>
+<div class="payement-contravention">
+  <div class="toolbar">
+    <div class="d-flex col-3">
+      <app-search-bar [id]="'search-car'" [placeholder]="'Numéro de plaque'">
+      </app-search-bar>
+      <app-button [withIcon]="true" [icon]="'fa fa-search'" (clickEvent)="onSearch($event)"></app-button>
+    </div>
+  </div>
+  <div class="main-body">
+    <app-table-model [datas]="contraventions" [headers]="headers" [withStatus]="true"
+      (eventSelectItem)="onItemSelected($event)" (eventDataSelectedItem)="onItemSelectedData($event)"></app-table-model>
+  </div>
+  <form [formGroup]="formGroup">
+    <div class="field-box">
+      <table class="table table-bordered table-striped">
+        <tbody>
+          <tr>
+            <td>
+              <div class="d-flex">
+                <h6 class="label">Véhicule:</h6>
+                <h6 class="label">{{vehicule}}</h6>
+              </div>
+            </td>
+            <td>
+              <div class="d-flex">
+                <h6 class="label">Contravention:</h6>
+                <h6 class="label">{{contravention}}</h6>
+              </div>
+            </td>
+            <td>
+              <div class="d-flex">
+                <h6 class="label">Modalité:</h6>
+                <h6 class="label">{{modalite}}</h6>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="payement-form d-flex">
+      <app-input-text [type]="'number'" [id]="'amount'" [disabled]="'disabled'" [placeholder]="'Montant'"
+        [formGroup]=formGroup (keyUpEvent)="onKeyUp($event)">
+      </app-input-text>
+      <app-button [id]="'validBtn'" [withIcon]="true" [text]="'Valider'" (clickEvent)="onValideTransaction($event)">
+      </app-button>
+    </div>
+    <div class="errorMsg">
+      {{errorMsg}}
+    </div>
+  </form>
+  <app-success-dialog [display]="displaySuccessDialog" [message]="successMessage" (eventClose)="closeSuccessDialog()">
+  </app-success-dialog>
+
+</div>

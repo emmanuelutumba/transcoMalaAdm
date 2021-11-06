@@ -1,0 +1,13 @@
+<div class="success-dialog modal" [ngStyle]="{'display':display}">
+  <div class="modal-content">
+    <div class="modal-body">
+      <i class="fa fa-check-circle-o icon" aria-hidden="true"></i>
+      <div class="message">
+        {{message}}
+      </div>
+      <div class="box-btn">
+        <app-button [text]="'Fermer'" (clickEvent)="onClose()"></app-button>
+      </div>
+    </div>
+  </div>
+</div>

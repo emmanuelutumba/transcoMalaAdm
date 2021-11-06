@@ -21,7 +21,7 @@ export class SelectOptionComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onChangeEvent() {
-    this.changeEvent.emit();
+  onChangeEvent(el) {
+    this.changeEvent.emit(el);
   }
 }
