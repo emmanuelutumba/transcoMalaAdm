@@ -25,7 +25,7 @@ export class TableModelComponent implements OnInit {
 
   isShowCol(id, item) {
     if (item.key === 'id' || item.key === 'status') {
-      $('#' + id).hide();
+      $('.table-model').find('#' + id).hide();
       return false;
     }
     return true;

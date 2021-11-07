@@ -1,0 +1,30 @@
+<div class="config-regie-detail modal" [ngStyle]="{'display':display}">
+  <div class="modal-content">
+    <div class="modal-header">
+      <div class="modal-title">
+        Détail
+      </div>
+      <div class="btn-close" (click)="onClose()"></div>
+    </div>
+    <div class="modal-body">
+      <div>
+        <div class="d-flex">
+          <div class="field-box col-6">
+            <h6 class="label">Dénomination</h6>
+            <app-input-text [inForm]="false" [value]="regieData!==undefined?regieData.name:''" [id]="'name'" [placeholder]="'Dénomination'"></app-input-text>
+          </div>
+        </div>
+        <div class="payement-account">
+          <h6 class="title">Mode de perception du paiement</h6>
+          <app-table-model [headers]="headers" [datas]="payementAccounts"></app-table-model>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <div class="msg-box">
+      </div>
+      <app-button [id]="'regie-add-form'" [text]="'Fermer'" (clickEvent)="onClose()" [withIcon]="true">
+      </app-button>
+    </div>
+  </div>
+</div>

@@ -12,11 +12,16 @@ export class TaxeService {
   private url = environment.baseUrl + 'taxe';
 
   holderTaxes: BehaviorSubject<any> = new BehaviorSubject<any>('');
+  subjectTaxes: Subject<any> = new Subject<any>();
 
   constructor(private http: HttpClient) {}
 
-   public getAllList() {
-    return this.http.get<HttpResponseModel<any>>(this.url+"/infos");
+  public getAllList() {
+    return this.http.get<HttpResponseModel<any>>(this.url + '/infos');
+  }
+
+  public loadData() {
+    return this.subjectTaxes.asObservable();
   }
 
   public loadTaxes() {
@@ -31,7 +36,13 @@ export class TaxeService {
   }
 
   public getList() {
-    return this.holderTaxes.value;
+    return this.http.get<HttpResponseModel<any>>(this.url).subscribe((data) => {
+      if (data.code === '200') {
+        console.log(data.data);
+
+        this.subjectTaxes.next(data.data);
+      }
+    });
   }
 
   public getAll(contrId): Observable<HttpResponseModel<any>> {
@@ -49,5 +60,17 @@ export class TaxeService {
 
   public getReport(): Observable<HttpResponseModel<any>> {
     return this.http.get<HttpResponseModel<any>>(this.url + '/report');
+  }
+
+  save(data: any): Observable<HttpResponseModel<any>> {
+    return this.http.post<HttpResponseModel<any>>(this.url, data);
+  }
+
+  update(data: any): Observable<HttpResponseModel<any>> {
+    return this.http.put<HttpResponseModel<any>>(this.url, data);
+  }
+
+  delete(id): Observable<HttpResponseModel<any>> {
+    return this.http.delete<HttpResponseModel<any>>(this.url + '/' + id);
   }
 }

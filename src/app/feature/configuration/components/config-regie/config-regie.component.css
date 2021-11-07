@@ -1,0 +1,12 @@
+.config-regie {
+  margin-top: 30px;
+}
+
+.config-regie .toolbar{
+  margin: 5px;
+}
+
+.config-regie .config-regie-data {
+  height: 45vh;
+  overflow: auto;
+}

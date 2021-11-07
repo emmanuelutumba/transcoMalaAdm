@@ -1,0 +1,12 @@
+.config-taxe {
+  margin-top: 30px;
+}
+
+.config-taxe .toolbar{
+  margin: 5px;
+}
+
+.config-taxe .config-taxe-data {
+  height: 45vh;
+  overflow: auto;
+}

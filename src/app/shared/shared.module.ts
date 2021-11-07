@@ -25,7 +25,8 @@ import { SuccessDialogComponent } from './components/success-dialog/success-dial
         SearchBarComponent,
         SelectOptionComponent,
         ConfirmDialogComponent,
-        SuccessDialogComponent
+        SuccessDialogComponent,
+        WaitingDialogComponent
     ],
     imports: [
         CommonModule,

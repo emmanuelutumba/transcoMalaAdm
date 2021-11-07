@@ -1,0 +1,12 @@
+.config-contravention {
+  margin-top: 30px;
+}
+
+.config-contravention .toolbar{
+  margin: 5px;
+}
+
+.config-contravention .config-contravention-data {
+  height: 45vh;
+  overflow: auto;
+}

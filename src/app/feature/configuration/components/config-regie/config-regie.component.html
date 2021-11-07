@@ -1,0 +1,26 @@
+<div class="config-regie d-block">
+  <div class="toolbar d-flex">
+    <div class="search-bar col-3">
+      <app-search-bar (keyup)="onSearch($event)" [id]="'search-car'" [placeholder]="'Recherche'">
+      </app-search-bar>
+    </div>
+    <div class="option-btn d-flex">
+      <app-btn-dropdown [id]="'reportInsId'" [title]="'Action'" [datas]="options"
+        (eventSelectedOption)="onSelectedOption($event)"></app-btn-dropdown>
+    </div>
+  </div>
+  <div class="report-contravention-data">
+    <app-table-model (eventSelectItem)="onSelectItem($event)" (eventDataSelectedItem)="onDataSelectedItem($event)"
+      [headers]="headers" [datas]="datas" [loading]="isTableLoading"></app-table-model>
+  </div>
+  <app-config-regie-detail [display]="displayDetailForm" (eventClose)="onCloseDetail()"></app-config-regie-detail>
+  <app-config-regie-form [display]="displayAddForm" (eventClose)="onCloseAddForm()" (eventValidate)="onValidate()">
+  </app-config-regie-form>
+  <app-config-regie-edit-form [display]="displayEditForm" (eventClose)="onCloseEditForm()"
+    (eventValidate)="onValidateEdit()"></app-config-regie-edit-form>
+  <app-confirm-dialog [display]="displayConfirmDelete" [message]="confirmMessage" (eventConfirm)="onDeleteRegie($event)"
+    (eventCancel)="closeConfirmDialog()"></app-confirm-dialog>
+  <app-success-dialog [display]="displaySuccessDialog" [message]="successMessage" (eventClose)="closeSuccessDialog()">
+  </app-success-dialog>
+  <app-waiting-dialog [display]="displayWarningDialog" [message]="waitingMessage"></app-waiting-dialog>
+</div>

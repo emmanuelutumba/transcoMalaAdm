@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ContraventionService } from 'src/app/core/services/contravention.service';
 import { TaxeService } from 'src/app/core/services/taxe.service';
 import { VehicleService } from 'src/app/core/services/vehicle.service';
-
+import $ from 'jquery';
 @Component({
   selector: 'app-report-container',
   templateUrl: './report-container.component.html',
@@ -27,6 +27,7 @@ export class ReportContainerComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+
     this.vehiculeService.getReport().subscribe((data) => {
       if (data.code === '200') {
         this.insuranceNoPaid = data.data.paid;

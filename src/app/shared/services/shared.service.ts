@@ -1,11 +1,10 @@
-import {Injectable} from '@angular/core';
-import {Observable, Subject} from 'rxjs';
+import { Injectable } from '@angular/core';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class SharedService {
-
   contribuableDataObs: Subject<any> = new Subject<any>();
   contribuableData: any;
 
@@ -15,9 +14,16 @@ export class SharedService {
   driverDataObs: Subject<any> = new Subject<any>();
   driverData: any;
 
+  regieDataObs: Subject<any> = new Subject<any>();
+  regieData: any;
 
-  constructor() {
-  }
+  taxeDataObs: Subject<any> = new Subject<any>();
+  taxeData: any;
+
+  contraventionDataObs: Subject<any> = new Subject<any>();
+  contraventionData: any;
+
+  constructor() {}
 
   setContribuable(data) {
     console.log('saving contribuable data...', data);
@@ -50,5 +56,32 @@ export class SharedService {
 
   public getDriver(): Observable<any> {
     return this.driverDataObs.asObservable();
+  }
+
+  setRegie(data) {
+    this.regieData = data;
+    this.regieDataObs.next(data);
+  }
+
+  public getRegie(): Observable<any> {
+    return this.regieDataObs.asObservable();
+  }
+
+  setTaxe(data) {
+    this.taxeData = data;
+    this.taxeDataObs.next(data);
+  }
+
+  public getTaxe(): Observable<any> {
+    return this.taxeDataObs.asObservable();
+  }
+
+  setContravention(data) {
+    this.contraventionData = data;
+    this.contraventionDataObs.next(data);
+  }
+
+  public getContravention(): Observable<any> {
+    return this.contraventionDataObs.asObservable();
   }
 }

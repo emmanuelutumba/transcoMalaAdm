@@ -28,6 +28,9 @@ const routes: Routes = [
     , {
       path: '',
       loadChildren: () => import('./feature/payement/payement.module').then(m => m.PayementModule)
+    }, {
+      path: '',
+      loadChildren: () => import('./feature/configuration/configuration.module').then(m => m.ConfigurationModule)
     }
   ]
 ;

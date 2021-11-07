@@ -9,8 +9,21 @@ import { HttpResponseModel } from '../../shared/model/HttpResponse.model';
 })
 export class ContraventionService {
   private url = environment.baseUrl + 'contravention';
+  contraventionsSubject: Subject<any> = new Subject<any>();
 
   constructor(private http: HttpClient) {}
+
+  loadData() {
+    return this.contraventionsSubject.asObservable();
+  }
+
+  public getAllContr() {
+    this.http.get<HttpResponseModel<any>>(this.url).subscribe((data) => {
+      if (data.code === '200') {
+        this.contraventionsSubject.next(data.data);
+      }
+    });
+  }
 
   public getAllList() {
     return this.http.get<HttpResponseModel<any>>(this.url + '/infos');
@@ -41,5 +54,17 @@ export class ContraventionService {
 
   public getReport(): Observable<HttpResponseModel<any>> {
     return this.http.get<HttpResponseModel<any>>(this.url + '/report');
+  }
+
+  save(data: any): Observable<HttpResponseModel<any>> {
+    return this.http.post<HttpResponseModel<any>>(this.url, data);
+  }
+
+  update(data: any): Observable<HttpResponseModel<any>> {
+    return this.http.put<HttpResponseModel<any>>(this.url, data);
+  }
+
+  delete(id): Observable<HttpResponseModel<any>> {
+    return this.http.delete<HttpResponseModel<any>>(this.url + '/' + id);
   }
 }
