@@ -1,7 +1,7 @@
 import {Routes} from '@angular/router';
-import {LoginContainerComponent} from './component/login-container/login-container.component';
-import {UserContainerComponent} from './component/user-container/user-container.component';
-import {AddUserContainerComponent} from './component/add-user-container/add-user-container.component';
+import {LoginContainerComponent} from './components/login-container/login-container.component';
+import {UserContainerComponent} from './components/user-container/user-container.component';
+import {AddUserContainerComponent} from './components/add-user-container/add-user-container.component';
 
 export const AuthRoutes: Routes = [
   {

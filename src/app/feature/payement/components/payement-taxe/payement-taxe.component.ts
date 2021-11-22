@@ -30,7 +30,7 @@ export class PayementTaxeComponent implements OnInit {
     'Status',
   ];
   taxes = [{ key: 1, value: 'Vignette' }];
-  taxesData = [];
+  taxesData: any = [];
   taxeDataSelected: any;
   taxeSelected: any;
   taxeModalite = '';
@@ -314,7 +314,7 @@ export class PayementTaxeComponent implements OnInit {
     }
   }
 
-  closeSuccessDialog(){
-    this.displaySuccessDialog='none';
+  closeSuccessDialog() {
+    this.displaySuccessDialog = 'none';
   }
 }

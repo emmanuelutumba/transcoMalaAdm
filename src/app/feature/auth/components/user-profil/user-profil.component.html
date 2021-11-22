@@ -1,0 +1,25 @@
+<div class="user-profil d-block">
+  <div class="toolbar d-flex pb-3 pt-2">
+    <div class="search-bar col-3">
+      <app-search-bar (keyup)="onSearch($event)" [id]="'search-car'" [placeholder]="'Recherche'">
+      </app-search-bar>
+    </div>
+    <div class="option-btn d-flex">
+      <app-btn-dropdown [id]="'reportInsId'" [title]="'Action'" [datas]="options"
+        (eventSelectedOption)="onSelectedOption($event)"></app-btn-dropdown>
+    </div>
+  </div>
+  <div class="user-profil-data">
+    <app-table-model (eventSelectItem)="onSelectItem($event)" (eventDataSelectedItem)="onDataSelectedItem($event)"
+      [headers]="headers" [datas]="users" [loading]="isTableLoading" [withStatus]="true"></app-table-model>
+  </div>
+  <app-user-edit-form [display]="displayEditForm" (eventValidate)="onValidate()" (eventClose)="onCloseEditForm()">
+  </app-user-edit-form>
+  <app-user-add-form [display]="displayAddForm" (eventValidate)="onValidate()" (eventClose)="onCloseAddForm()">
+  </app-user-add-form>
+  <app-confirm-dialog [display]="displayConfirmDelete" [message]="confirmMessage" (eventConfirm)="onDeleteItem()"
+    (eventCancel)="closeConfirmDialog()"></app-confirm-dialog>
+  <app-success-dialog [display]="displaySuccessDialog" [message]="successMessage" (eventClose)="closeSuccessDialog()">
+  </app-success-dialog>
+  <app-waiting-dialog [display]="displayWarningDialog" [message]="waitingMessage"></app-waiting-dialog>
+</div>

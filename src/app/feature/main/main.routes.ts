@@ -4,7 +4,7 @@ import { PayementContainerComponent } from '../payement/components/payement-cont
 import { VehicleContainerComponent } from '../contribuable/components/vehicle/components/vehicle-container/vehicle-container.component';
 import { ReportContainerComponent } from '../report/components/report-container/report-container.component';
 import { ConfigContainerComponent } from '../configuration/components/config-container/config-container.component';
-import { UserContainerComponent } from '../auth/component/user-container/user-container.component';
+import { UserContainerComponent } from '../auth/components/user-container/user-container.component';
 import { ReportInsuranceComponent } from '../report/components/report-insurance/report-insurance.component';
 import { ReportContraventionComponent } from '../report/components/report-contravention/report-contravention.component';
 import { ReportTaxeComponent } from '../report/components/report-taxe/report-taxe.component';
@@ -21,6 +21,8 @@ import { PayementContraventionComponent } from '../payement/components/payement-
 import { ConfigRegieComponent } from '../configuration/components/config-regie/config-regie.component';
 import { ConfigContraventionComponent } from '../configuration/components/config-contravention/config-contravention.component';
 import { ConfigTaxeComponent } from '../configuration/components/config-taxe/config-taxe.component';
+import { UserProfilComponent } from '../auth/components/user-profil/user-profil.component';
+import { UserRoleComponent } from '../auth/components/user-role/user-role.component';
 
 export const MainRoutes: Routes = [
   {
@@ -96,6 +98,20 @@ export const MainRoutes: Routes = [
       {
         path: 'user',
         component: UserContainerComponent,
+        children: [
+          {
+            path: '',
+            component: UserProfilComponent,
+          },
+          {
+            path: 'profil',
+            component: UserProfilComponent,
+          },
+          {
+            path: 'role',
+            component: UserRoleComponent,
+          },
+        ],
       },
       {
         path: 'contribuable',

@@ -23,6 +23,9 @@ export class SharedService {
   contraventionDataObs: Subject<any> = new Subject<any>();
   contraventionData: any;
 
+  userProfilObs: Subject<any> = new Subject<any>();
+  userProfilData: any;
+
   constructor() {}
 
   setContribuable(data) {
@@ -83,5 +86,14 @@ export class SharedService {
 
   public getContravention(): Observable<any> {
     return this.contraventionDataObs.asObservable();
+  }
+
+  setUserProfil(data) {
+    this.userProfilData = data;
+    this.userProfilObs.next(data);
+  }
+
+  getUserProfil() {
+    return this.userProfilObs.asObservable();
   }
 }

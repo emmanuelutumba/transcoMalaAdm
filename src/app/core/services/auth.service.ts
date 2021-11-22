@@ -1,12 +1,12 @@
-import {Injectable} from '@angular/core';
-import {BehaviorSubject, Observable} from 'rxjs';
-import {UserModel} from '../model/user.model';
-import {environment} from '../../../environments/environment';
-import {HttpClient} from '@angular/common/http';
-import {map} from 'rxjs/operators';
+import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { UserModel } from '../model/user.model';
+import { environment } from '../../../environments/environment';
+import { HttpClient } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
   private url = environment.baseUrl + 'profil/';
@@ -22,17 +22,19 @@ export class AuthService {
   }
 
   login(user: UserModel): Observable<any> {
-    return this.httpClient.post<any>(this.url + 'auth', user)
-      .pipe(map(response => {
+    return this.httpClient.post<any>(this.url + 'auth', user).pipe(
+      map((response) => {
         if (response.code === '200') {
           this.userSubject.next(response.data);
         }
         return response;
-      }));
+      })
+    );
   }
 
   logout() {
     localStorage.removeItem('userData');
     this.userSubject.next(null);
   }
+
 }
