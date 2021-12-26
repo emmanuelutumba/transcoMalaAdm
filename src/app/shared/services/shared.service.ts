@@ -26,6 +26,9 @@ export class SharedService {
   userProfilObs: Subject<any> = new Subject<any>();
   userProfilData: any;
 
+  roleDataObs:Subject<any> = new Subject<any>();
+  roleData:any;
+
   constructor() {}
 
   setContribuable(data) {
@@ -95,5 +98,14 @@ export class SharedService {
 
   getUserProfil() {
     return this.userProfilObs.asObservable();
+  }
+
+  setRole(data) {
+    this.roleData = data;
+    this.roleDataObs.next(data);
+  }
+
+  getRole() {
+    return this.roleDataObs.asObservable();
   }
 }

@@ -11,11 +11,13 @@ import { SelectOptionComponent } from './components/select-option/select-option.
 import { WaitingDialogComponent } from './components/waiting-dialog/waiting-dialog.component';
 import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dialog.component';
 import { SuccessDialogComponent } from './components/success-dialog/success-dialog.component';
+import { CheckBoxComponent } from './components/check-box/check-box.component';
+import { NgDialogModelComponent } from './components/ng-dialog-model/ng-dialog-model.component';
 
 
 
 @NgModule({
-    declarations: [InputTextComponent, ButtonComponent, ItemOComponent,  BtnDropdownComponent, TableModelComponent, SearchBarComponent, SelectOptionComponent, WaitingDialogComponent, ConfirmDialogComponent, SuccessDialogComponent],
+    declarations: [InputTextComponent, ButtonComponent, ItemOComponent,  BtnDropdownComponent, TableModelComponent, SearchBarComponent, SelectOptionComponent, WaitingDialogComponent, ConfirmDialogComponent, SuccessDialogComponent, CheckBoxComponent, NgDialogModelComponent],
     exports: [
         InputTextComponent,
         ButtonComponent,
@@ -26,7 +28,9 @@ import { SuccessDialogComponent } from './components/success-dialog/success-dial
         SelectOptionComponent,
         ConfirmDialogComponent,
         SuccessDialogComponent,
-        WaitingDialogComponent
+        WaitingDialogComponent,
+        CheckBoxComponent,
+        NgDialogModelComponent
     ],
     imports: [
         CommonModule,

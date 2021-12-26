@@ -1,0 +1,22 @@
+ .check-box .check-item {
+  height: 27px;
+  width: 24px;
+  border: 1px solid #c0c0c0;
+  border-radius: 3px;
+  margin: 2px;
+  cursor: pointer;
+  color: #000;
+}
+
+.check-box .check-item i{
+  padding: 3px;
+}
+
+.check-box .label{
+  padding: 5px;
+}
+
+.active {
+  background: linear-gradient(to top, #01355a, #036ab4);
+  color: #fff !important;
+}

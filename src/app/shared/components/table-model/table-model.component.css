@@ -64,6 +64,10 @@
 .table-model .fill-red {
   background-color: red;
 }
+
+.table-model .fill-gray {
+  background-color: rgb(101, 101, 101);
+}
 .table-data-loading .loading-icon {
   width: 30px;
   margin: auto;

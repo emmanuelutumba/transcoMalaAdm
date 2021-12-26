@@ -1,0 +1,23 @@
+<div [id]="id" class="ng-dialog-model modal" [ngStyle]="{'display':display}">
+  <div class="modal-content" [ngStyle]="style">
+    <div class="modal-header" *ngIf="withHeader">
+      <div class="modal-title">
+        {{title}}
+      </div>
+      <div class="btn-close" (click)="onClose()"></div>
+    </div>
+    <div class="modal-body body-form">
+      <ng-content></ng-content>
+    </div>
+    <div class="modal-footer" *ngIf="withFooter">
+      <div class="msg-box">
+        {{errorMsg}}
+      </div>
+      <div>
+        <app-button [id]="'ng-dialog-model-validBtn'" [text]="'Valider'" (clickEvent)="onValidate($event)"
+          [withIcon]="true">
+        </app-button>
+      </div>
+    </div>
+  </div>
+</div>

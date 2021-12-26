@@ -1,0 +1,25 @@
+.ng-dialog-model {
+  padding-top: 10vh;
+  line-height: 1.5 !important;
+}
+
+.ng-dialog-model .modal-header {
+  background: linear-gradient(to top, #c5c5c5 -100%, #e8e8e8);
+}
+
+.ng-dialog-model .modal-content {
+  width: 50%;
+  box-shadow: 0 0 7px #b6b6b6;
+  border: 1px solid #e7e7e7;
+  border-radius: 2px;
+  margin: auto;
+}
+
+.ng-dialog-model .btn-close {
+  cursor: pointer;
+}
+
+.ng-dialog-model .modal-footer .msg-box {
+  color: red;
+  font-size: 13px;
+}
